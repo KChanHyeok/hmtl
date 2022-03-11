@@ -940,10 +940,6 @@ interface SquareConfig {
         color?: string
         width?: number
 }
-    
-
-
-
 
 function createSquare(config: SquareConfig) : {color: string, area:number} {
     let newSquare = {color: 'white', area: 100}
@@ -960,36 +956,64 @@ function createSquare(config: SquareConfig) : {color: string, area:number} {
     console.log(mySquare)
 
 */
-// 네임스페이스
-interface StringValidator {
-    isAcceptable(s: string): boolean
+
+// 인터페이스와 매개변수 
+/*
+interface Hero {
+
+    'superhero': string
+    'publisher': string
+
+    'alter_ego'?: string
+    'first_appearance'?: string
+    'characters'?: string
+    onInit(): void
+    superPower?(gage:number):number
 }
 
-let lettersRegexp = /^[A-Za-z]+$/
-let numberRegexp = /^[0-9]+$/
+class  SuperHero implements Hero{
+    
+    'superhero': string;
+    'publisher': string;
 
-class LettersOnlyValidator implements StringValidator {
-    isAcceptable(s: string) {
-        return lettersRegexp.test(s)
+    constructor(superhero: string, publisher: string) {
+        this.superhero = superhero
+        this.publisher = publisher
+    }
+
+    onInit(): void {
+        
+    }
+    onClick(): void {
+        
     }
 }
+let flash = new SuperHero('플래시(Flahs)', 'DC코믹스')
+let wolverine = new SuperHero('울버린(Wolverine)', 'Marvel 코믹스');
 
-class ZipCodeValidator implements StringValidator {
-    isAcceptable(s: string) {
-        return s.length === 5 && numberRegexp.test(s)
-    }
+console.log(flash.superhero)
+console.log(wolverine.publisher)
+*/
+
+interface OnInitInterface{
+    onInit():void
+    initialize():void
 }
 
-let strings = ['Hello', '98052', '101']
-
-let validators: { [s: string]: StringValidator } = {}
-validators['ZIP code'] = new ZipCodeValidator()
-validators['Letters only'] = new LettersOnlyValidator()
-
-for (let s of strings) {
-    for (let name in validators) {
-        let isMatch = validators[name].isAcceptable(s)
-
-        console.log(`'${s}' ${ isMatch ? 'matches' : 'does not match' } '${ name }'. `)
-    }
+const o = {
+    onInit() :void { console.log('onInit 라이프 사이클') },
+    initialize() :void { console.log('객체 초기화') }
 }
+
+const j = {
+    settings():void {console.log('객체 설정') }
+}
+
+function ready(m:OnInitInterface) :void {
+    m.onInit()
+    m.initialize()
+}
+
+ready(o)
+
+ready(j) //조건이 충족 하지 않아 오류 발생

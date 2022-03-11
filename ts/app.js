@@ -9,25 +9,16 @@ let is_waterprofing: boolean =  false
 console.log('product_id:', product_id)
 console.log('product_name', product_name)
 console.log('is_waterprofing', is_waterprofing) */
-let lettersRegexp = /^[A-Za-z]+$/;
-let numberRegexp = /^[0-9]+$/;
-class LettersOnlyValidator {
-    isAcceptable(s) {
-        return lettersRegexp.test(s);
-    }
+const o = {
+    onInit() { console.log('onInit 라이프 사이클'); },
+    initialize() { console.log('객체 초기화'); }
+};
+const j = {
+    settings() { console.log('객체 설정'); }
+};
+function ready(m) {
+    m.onInit();
+    m.initialize();
 }
-class ZipCodeValidator {
-    isAcceptable(s) {
-        return s.length === 5 && numberRegexp.test(s);
-    }
-}
-let strings = ['Hello', '98052', '101'];
-let validators = {};
-validators['ZIP code'] = new ZipCodeValidator();
-validators['Letters only'] = new LettersOnlyValidator();
-for (let s of strings) {
-    for (let name in validators) {
-        let isMatch = validators[name].isAcceptable(s);
-        console.log(`'${s}' ${isMatch ? 'matches' : 'does not match'} '${name}'. `);
-    }
-}
+ready(o);
+ready(j); //조건이 충족 하지 않아 오류 발생
