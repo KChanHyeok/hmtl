@@ -994,7 +994,7 @@ let wolverine = new SuperHero('울버린(Wolverine)', 'Marvel 코믹스');
 console.log(flash.superhero)
 console.log(wolverine.publisher)
 */
-
+/*
 interface OnInitInterface{
     onInit():void
     initialize():void
@@ -1017,3 +1017,4 @@ function ready(m:OnInitInterface) :void {
 ready(o)
 
 ready(j) //조건이 충족 하지 않아 오류 발생
+*/
