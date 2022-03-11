@@ -994,6 +994,7 @@ let wolverine = new SuperHero('울버린(Wolverine)', 'Marvel 코믹스');
 console.log(flash.superhero)
 console.log(wolverine.publisher)
 */
+
 /*
 interface OnInitInterface{
     onInit():void
@@ -1017,4 +1018,26 @@ function ready(m:OnInitInterface) :void {
 ready(o)
 
 ready(j) //조건이 충족 하지 않아 오류 발생
+*/
+
+// 인터페이스와 객체 리터럴
+
+/*
+interface OnInitInterface {
+    onInit(): void
+    initialize?(): void
+}
+
+const o:OnInitInterface = {
+    onInit(): void { console.log('onInit 라이프 사이클')},
+    initialize(): void {console.log('객체 초기화')}
+}
+
+const j:OnInitInterface = {
+    onInit():void {console.log('객체 설정')}
+}
+
+console.log(o.onInit())
+console.log(j.onInit())
+
 */
