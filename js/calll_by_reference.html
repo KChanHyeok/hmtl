@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <div class="test">
+  </div>
+  <script>
+
+  function change(a, b) {
+    a = 0;
+    b = 6;
+    return a+b
+  }
+
+  const a = 1
+  const b = 2
+  console.log(change(a, b))
+  console.log(a, b)
+
+  //call by reference
+  function changed(c) {
+  c[0] = 3
+  c[2] = 8
+  }
+  const c = [1,2,3]
+  changed(c)
+  console.log(c)
+
+  const obj = {
+    number1 : 1,
+    number2 : 2,
+    number3 : [3,4,5]
+  }
+  function update(objRef) {
+    objRef.number1 = 80
+  }
+  update(obj)
+  console.log(obj)
+    
+  </script>
+</body>
+</html>
