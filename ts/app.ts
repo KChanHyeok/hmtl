@@ -915,6 +915,7 @@ alert('card: ' + pickedCard.card + ' of ' + pickedCard.suit)
 
 */
 
+/*
 function printLabel(labeledObj: { label: string }) {
     console.log(labeledObj.label)
 }
@@ -922,9 +923,9 @@ function printLabel(labeledObj: { label: string }) {
 let myObj = {size: 10, label: "Size 10 Object"}
     printLabel(myObj)
 
-    interface LabeledValue {
+interface LabeledValue {
         label: string
-    }
+}
 
 
 
@@ -957,3 +958,38 @@ function createSquare(config: SquareConfig) : {color: string, area:number} {
 
     let mySquare = createSquare({color: "black"})
     console.log(mySquare)
+
+*/
+// 네임스페이스
+interface StringValidator {
+    isAcceptable(s: string): boolean
+}
+
+let lettersRegexp = /^[A-Za-z]+$/
+let numberRegexp = /^[0-9]+$/
+
+class LettersOnlyValidator implements StringValidator {
+    isAcceptable(s: string) {
+        return lettersRegexp.test(s)
+    }
+}
+
+class ZipCodeValidator implements StringValidator {
+    isAcceptable(s: string) {
+        return s.length === 5 && numberRegexp.test(s)
+    }
+}
+
+let strings = ['Hello', '98052', '101']
+
+let validators: { [s: string]: StringValidator } = {}
+validators['ZIP code'] = new ZipCodeValidator()
+validators['Letters only'] = new LettersOnlyValidator()
+
+for (let s of strings) {
+    for (let name in validators) {
+        let isMatch = validators[name].isAcceptable(s)
+
+        console.log(`'${s}' ${ isMatch ? 'matches' : 'does not match' } '${ name }'. `)
+    }
+}
