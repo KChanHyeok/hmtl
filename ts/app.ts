@@ -1057,4 +1057,18 @@ button.onClick()
 
 */
 
+//인터페이스 읽기 전용 속성
+/*
+interface Notebook {
+    readonly CPU: string
+    readonly RAM: string
+}
+let mackbook: Notebook = {
+    CPU: '1111',
+    RAM: '456456'
+}
+mackbook.CPU = 'qweqweq'
+
+console.log(mackbook.CPU)
+*/
 
