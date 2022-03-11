@@ -1042,18 +1042,19 @@ j.onInit()
 */
 
 // 인터페이스 옵션 속성
+
 /*
 interface ButtonInterface {
-    onInit():void 
+    onInit?():void 
     onClick():void
 }
 
 class ButtonComponent implements ButtonInterface {
-    onInit(): void { console.log('버튼 컴포넌트 초기화') }
     onClick(): void { console.log('버튼 클릭') }
 }
 let button = new ButtonComponent()
-button.onInit()
 button.onClick()
 
 */
+
+
