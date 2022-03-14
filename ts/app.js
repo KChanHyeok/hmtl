@@ -1003,3 +1003,84 @@ mackbook.CPU = 'qweqweq'
 
 console.log(mackbook.CPU)
 */
+// 인덱스 시그니처 속성
+/*
+interface ButtonInterface {
+    type?:string
+    disabled?:boolean
+
+    onInit?(): void
+    onClick(): void
+}
+class ButtonComponent implements ButtonInterface {
+    
+    type:string = 'button'
+    disabled:boolean = false
+
+    constructor(){}
+    onClick() {
+        console.log('버튼 클릭')
+    }
+}
+let buttonshot = new ButtonComponent()
+buttonshot.onClick()
+
+const button:ButtonInterface = {
+
+    type: 'button',
+    disabled: false,
+
+    onClick() {
+        console.log('버튼 클릭')
+    }
+}
+
+button.onClick()
+
+*/
+// 인터페이스의 함수 타입
+/*
+const factorial = (n:number): number => {
+    if ( n === 0 ) { return 0 }
+    if ( n === 1 ) { return 1 }
+    return n* factorial(n - 1)
+}
+
+interface FactorialInterface {
+    (n: number): number
+}
+
+const facto:FactorialInterface = (n) => {
+    if ( n === 0 ) { return 0 }
+    if ( n === 1 ) { return 1 }
+    return n * facto(n - 1)
+}
+
+const fct: FactorialInterface = (n:number[]): number => {
+    if( n[0] === 0 ) { return 0 }
+    if( n[0] === 1 ) { return 1 }
+    return n[0] * facto(n[0] - 1)
+}
+*/
+//인터페이스 확장
+/*
+interface ButtonInterface {
+    readonly _type:string
+    width?: number
+    height?: number
+    onInit?() :void
+    onClick() :void
+}
+
+interface ToggleButtonInterface extends ButtonInterface {
+    toggle(): void
+    onToggled?():void
+}
+
+interface CounterButtonInterface extends ButtonInterface {
+    increase(): void
+    decrease(): void
+    onIncreased?() :void
+    onDecreased?() :void
+}
+*/ 
