@@ -1083,4 +1083,50 @@ interface CounterButtonInterface extends ButtonInterface {
     onIncreased?() :void
     onDecreased?() :void
 }
-*/ 
+*/
+// 제네릭과 클래스
+/*
+class Model<T> {
+    private _data:T[] = []
+
+    constructor(data:T[] = []){
+        this._data = data
+    }
+
+    get data():T[] {
+        return this._data
+    }
+
+    add(item:T) :void {
+        this._data.push(item)
+    }
+
+    remove(index:number) :void {
+        this._data.splice(index, 1)
+    }
+    item(index:number) :T {
+        return this._data[index]
+    }
+
+    clear():void {
+        this._data = []
+    }
+}
+const stringModel = new Model<string>()
+
+stringModel.add('흔들의자')
+
+
+console.log(stringModel.data)
+*/
+// 제네릭과 함수
+function getItemArray(arr, index) {
+    return arr[index];
+}
+function pushItemArray(arr, item) {
+    arr.push(item);
+}
+const potatoChip_materials = ['어니언'];
+console.log(getItemArray(potatoChip_materials, 0));
+pushItemArray(potatoChip_materials, '사워크림');
+console.log(potatoChip_materials);
