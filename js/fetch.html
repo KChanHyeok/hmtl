@@ -32,42 +32,36 @@
             return retValue
         }
 
-        get(url, params){
-            fetch(this._mergeUrl(url, params))
-            .then((res) => res.json())
-            .then((res) => console.log(res))
+        async get(url, responseType='json', params){
+            return await fetch(this._mergeUrl(url, params))
         }
 
-        post(url, data, params){
-            fetch(this._mergeUrl(url, params), {
+        async post(url, data, params){
+            return await fetch(this._mergeUrl(url, params), {
                 method: 'POST',
                 headers: {
                     'Content-type': 'application/json; charset=UTF-8'
                 },
                 body: JSON.stringify(data),
-            }).then((res) => res.json())
-            .then((json) => console.log(json))
+            })
         }
 
-        put(url, data, params){
-            fetch(this._mergeUrl(url, params), {
+        async put(url, data, params){
+            return await fetch(this._mergeUrl(url, params), {
                 method: 'PUT',
                 body: JSON.stringify(data),
                 headers: {
                     'Content-type': 'application/json; charset=UTF-8'
                 },
-            }).then((res) => res.json())
-            .then((json) => console.log(json))
+            })
         }
-        delete(url, params){
-            fetch(this._mergeUrl(url, params), {
+        async delete(url, params){
+            return await fetch(this._mergeUrl(url, params), {
                 method: 'DELETE'
-
-            }).then((res) => res.json())
-            .then((json) => console.log(json))
+            })
         }
-        patch(url, params){
-            fetch(this._mergeUrl(url, params), {
+        async patch(url, params){
+            return await fetch(this._mergeUrl(url, params), {
                 method: 'PATCH',
                 body: JSON.stringify({
                     title: 'foo'
@@ -75,21 +69,23 @@
                 headers: {
                     'Content-type': 'application/json; charset=UTF-8'
                 }
-            }).then((res) => res.json())
-            .then((json) => console.log(json))
+            })
         }
     }
 
     let a1 = new APICaller()
 
-    a1.get('posts')
-    a1.post('posts',{ title: 'tt', body: 'hello'})
-    a1.put('posts/1' , {id: 1, title: 'test', body: 'I am testing', userId: 1})
-    a1.patch('posts/1', {title: 'foo'})
-    a1.delete('posts/1')
+    async function main(num) {
+        const response = await a1.get('posts')
+        console.log(response.json())
+        a1.post('posts',{ title: 'tt', body: 'hello'})
+        a1.put(`posts/${num}` , { title: 'test', body: 'I am testing', userId: 1})
+        a1.patch(`posts/${num}`, { title: 'foo'})
+        a1.delete(`posts/${num}`)
+    }
+    main(1)
     
 
-    
     
 
     </script>
