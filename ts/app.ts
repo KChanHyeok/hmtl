@@ -1212,7 +1212,7 @@ console.log(potatoChip_materials)
 */
 
 // 제네릭 멀티 타입 설정
-
+/*
 type pairArray = [any, any][]
 
 function pushPairItem<T,M>(arr:pairArray, item:[T, M]):pairArray {
@@ -1224,5 +1224,33 @@ const data:pairArray = []
 
 pushPairItem<boolean, string>(data, [false, 'false'])
 pushPairItem<number, string>(data, [2022, '이천이십이년'])
+*/
 
+// 팩토리 함수 + 멀티 타입
+/*
+class Model {
+    constructor(public options: any) {}
+}
+
+function create<T, U>( C: {new (U): T}, options: U ):T {
+    return new C(options)
+}
+
+create<Model, string[]>(Model, ['class type'])
+*/
+
+// 타입 변수 상속
+
+class Model<T> {
+    constructor(private _data:T[] = []) {}
+        add(item:T):void {
+            this._data.push(item)
+        }
+}
+function initializeModel<T extends Model<U>, U>(C: new () => T, items: U[]):T {
+    const c = new C()
+    items.forEach(item => c.add(item))
+    return c 
+}
+console.log(initializeModel<Model<string>, string>(Model, ['타입', '변수', '상속']))
 
