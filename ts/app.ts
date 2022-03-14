@@ -1194,6 +1194,7 @@ console.log(stringModel.data)
 
 // 제네릭과 함수
 
+/*
 function getItemArray<T>(arr: T[], index: number): T {
     return arr[index]
 }
@@ -1207,3 +1208,21 @@ const potatoChip_materials = ['어니언']
 console.log(getItemArray(potatoChip_materials, 0)) 
 pushItemArray<string>(potatoChip_materials, '사워크림')
 console.log(potatoChip_materials)
+
+*/
+
+// 제네릭 멀티 타입 설정
+
+type pairArray = [any, any][]
+
+function pushPairItem<T,M>(arr:pairArray, item:[T, M]):pairArray {
+    arr.push(item)
+    return arr
+}
+
+const data:pairArray = []
+
+pushPairItem<boolean, string>(data, [false, 'false'])
+pushPairItem<number, string>(data, [2022, '이천이십이년'])
+
+
