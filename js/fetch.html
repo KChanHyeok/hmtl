@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API fetch</title>
+</head>
+<body>
+    <script>
+
+    DEFAULT_URL = 'https://jsonplaceholder.typicode.com/'
+
+    class APICaller {
+        constructor() {
+        }
+
+        _mergeUrl(url, params = null) {
+            const defaultUrl = DEFAULT_URL[DEFAULT_URL.length - 1] === '/' ? DEFAULT_URL.substr(0, DEFAULT_URL.length - 1) : DEFAULT_URL
+            url = url[0] === '/' ? url.substr(1) : url
+
+            let retValue = `${defaultUrl}/${url}`
+            
+            if (params != null) {
+                const queryStrings = []
+                for (let k of Object.keys(params)) {
+                    queryStrings.push(`${k}=${encodeURIComponent(params[k])}`)
+                }
+                retValue = retValue + '?' + queryStrings.join('&')
+                
+            }
+            return retValue
+        }
+
+        get(url, params){
+            fetch(this._mergeUrl(url, params))
+            .then((res) => res.json())
+            .then((res) => console.log(res))
+        }
+
+        post(url, data, params){
+            fetch(this._mergeUrl(url, params), {
+                method: 'POST',
+                headers: {
+                    'Content-type': 'application/json; charset=UTF-8'
+                },
+                body: JSON.stringify(data),
+            }).then((res) => res.json())
+            .then((json) => console.log(json))
+        }
+
+        put(url, data, params){
+            fetch(this._mergeUrl(url, params), {
+                method: 'PUT',
+                body: JSON.stringify(data),
+                headers: {
+                    'Content-type': 'application/json; charset=UTF-8'
+                },
+            }).then((res) => res.json())
+            .then((json) => console.log(json))
+        }
+        delete(url, params){
+            fetch(this._mergeUrl(url, params), {
+                method: 'DELETE'
+
+            }).then((res) => res.json())
+            .then((json) => console.log(json))
+        }
+        patch(url, params){
+            fetch(this._mergeUrl(url, params), {
+                method: 'PATCH',
+                body: JSON.stringify({
+                    title: 'foo'
+                }),
+                headers: {
+                    'Content-type': 'application/json; charset=UTF-8'
+                }
+            }).then((res) => res.json())
+            .then((json) => console.log(json))
+        }
+    }
+
+    let a1 = new APICaller()
+
+    a1.get('posts')
+    a1.post('posts',{ title: 'tt', body: 'hello'})
+    a1.put('posts/1' , {id: 1, title: 'test', body: 'I am testing', userId: 1})
+    a1.patch('posts/1', {title: 'foo'})
+    a1.delete('posts/1')
+    
+
+    
+    
+
+    </script>
+</body>
+</html>
