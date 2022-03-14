@@ -1240,7 +1240,7 @@ create<Model, string[]>(Model, ['class type'])
 */
 
 // 타입 변수 상속
-
+/*
 class Model<T> {
     constructor(private _data:T[] = []) {}
         add(item:T):void {
@@ -1253,4 +1253,15 @@ function initializeModel<T extends Model<U>, U>(C: new () => T, items: U[]):T {
     return c 
 }
 console.log(initializeModel<Model<string>, string>(Model, ['타입', '변수', '상속']))
+*/
+// 데코레이터
+
+function Component(value:string) {
+    console.log(value)
+
+    return function(target: Function) {
+        console.log(target)
+        console.log(target.prototype)
+    }
+}
 

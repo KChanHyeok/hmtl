@@ -1163,17 +1163,25 @@ function create<T, U>( C: {new (U): T}, options: U ):T {
 create<Model, string[]>(Model, ['class type'])
 */
 // 타입 변수 상속
-class Model {
-    constructor(_data = []) {
-        this._data = _data;
-    }
-    add(item) {
-        this._data.push(item);
-    }
+/*
+class Model<T> {
+    constructor(private _data:T[] = []) {}
+        add(item:T):void {
+            this._data.push(item)
+        }
 }
-function initializeModel(C, items) {
-    const c = new C();
-    items.forEach(item => c.add(item));
-    return c;
+function initializeModel<T extends Model<U>, U>(C: new () => T, items: U[]):T {
+    const c = new C()
+    items.forEach(item => c.add(item))
+    return c
 }
-console.log(initializeModel(Model, ['타입', '변수', '상속']));
+console.log(initializeModel<Model<string>, string>(Model, ['타입', '변수', '상속']))
+*/
+// 데코레이터
+function Component(value) {
+    console.log(value);
+    return function (target) {
+        console.log(target);
+        console.log(target.prototype);
+    };
+}
