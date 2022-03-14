@@ -1178,10 +1178,30 @@ function initializeModel<T extends Model<U>, U>(C: new () => T, items: U[]):T {
 console.log(initializeModel<Model<string>, string>(Model, ['타입', '변수', '상속']))
 */
 // 데코레이터
-function Component(value) {
-    console.log(value);
-    return function (target) {
-        console.log(target);
-        console.log(target.prototype);
-    };
+/*
+function Component(target:Function) {
+    console.log(target)
+    console.log(target.prototype)
 }
+
+@Component
+class TabComponent {}
+*/
+//데코레이터 팩토리
+/*
+function Component(value: string) {
+    console.log(value)
+
+    return function(target: Function) {
+        console.log(target)
+        console.log(target.prototype)
+    }
+}
+
+@Component('tabs')
+class TabsComponent {}
+
+//TabsComponent 객체 생성
+const tabs = new TabsComponent()
+*/
+
