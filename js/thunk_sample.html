@@ -9,29 +9,93 @@
     //     return next(action)
     // }
 
+    // function middleware({dispatch, getState}) {
+    //     return function(next) {
+    //         return function(action) {
+    //             if (typeof action === 'function') {
+    //                 // Inject the store's `dispatch` and `getState` methods, as well as any "extra arg"
+    //                 return action(dispatch, getState)
+    //             }
+    //             // Otherwise, pass the action down the middleware chain as usual
+    //             return next(action)
+    //         }
+    //     }
+    // }
 
-    
-    function middleware({dispatch, getState}) {
-        return function(next) {
-            return function(action) {
-                if (typeof action === 'function') {
-                    // Inject the store's `dispatch` and `getState` methods, as well as any "extra arg"
-                    return action(dispatch, getState)
-                }
-                // Otherwise, pass the action down the middleware chain as usual
-                return next(action)
-            }
+
+    const a = {
+        b () {
+            console.log(this)
+        },
+        c: () => {
+            console.log(this)
         }
     }
+    
+   a.b()
+   a.c()
+    
+    // function a() {
+    //     let test = 1
+    //     return function () {
+    //         let test2 = 2
+    //         return function() {
+    //             console.log(test, test2)
+    //         }
+    //     }
+    // }
 
-    const result1 = middleware({dispatch: 1, getState: 1})
-    const result2 = result1(function(action) {return action})
-    const result3 = result2({a: 1})
-    console.log(result1)
-    console.log(result2)
-    console.log(result3)
+    // function b() {
+    //     let test = 1
+    //     return  () => {
+    //         let test2 = 2
+    //         return () => {
+    //             console.log(test, test2)
+    //         }
+    //     }
+    // }
+    // a()()()
+    // b()()()
+
+
+    // [].map((item) => {
+    //     return item
+    // })
+
+
+    // console.log([1, 2,].map((item) => (item) => item + 1))
+
+    // const result1 = middleware({dispatch: 1, getState: 1})
+    // const result2 = result1(function(action) {return action})
+    // const result3 = result2({a: 1})
+    // console.log(result1)
+    // console.log(result2)
+    // console.log(result3)
    
-    console.log(middleware({dispatch: 1, getState: 1})(function(action) {return action})({a: 1}))
+    // console.log(middleware({dispatch: 1, getState: 1})(function(action) {return action})({a: 1}))
+
+    // const a = (v) => {
+    //     return {
+    //         bb: function () {
+    //             return v + 1
+    //         },
+    //         cc: function (cc_v) {
+    //             return v + cc_v
+    //         },
+    //         dd: {
+    //             dd1: function () {
+    //                 return v+1
+    //             },
+    //             dd2: function () {
+                    
+    //             }
+    //         }
+    //     }
+    // }
+
+    // console.log(a(1).bb())
+    // console.log(a(1).cc(33))
+    // console.log(a(1).dd.dd1())
 
     // 1 : middleware({})(function() {})(function(){})
     // 2 : middleware({})(function() {})({a: 1})
@@ -57,31 +121,5 @@
     // const result = funcB(1)(funcA)
 
     // console.log(result)
-
-    
-
-    // const a = (v) => {
-    //     return {
-    //         bb: function () {
-    //             return v + 1
-    //         },
-    //         cc: function (cc_v) {
-    //             return v + cc_v
-    //         },
-    //         dd: {
-    //             dd1: function () {
-
-    //             },
-    //             dd2: function () {
-                    
-    //             }
-    //         }
-    //     }
-    // }
-
-    // a(1).bb()
-    // a(1).cc(33)
-    // a(1).dd.dd1()
-
 
 </script>

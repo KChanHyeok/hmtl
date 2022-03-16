@@ -54,6 +54,131 @@
     //     }
     // }
 
+//    var a = 10
+//    console.log(a)
+//    function aa() { console.log(a) }
+
+//    var a = 20
+//    console.log(a)
+//    function bb() { console.log(a) }
+
+//    var a = 30
+//    console.log(a)
+//    function cc() { console.log(a) }
+//     aa()
+//     bb()
+//     cc()
+
+    // const module = {}
+    // {
+    //     const a =10
+    //     const b = 20
+    //     const c = function () {}
+    //     module.a = {a: a, b: b, c: c}
+    // }
+    // module.a = module.a || {}
+
+    // {
+    //     const a = 10
+    //     const b = 20
+    //     const c = function () {}
+    //     module.b = {a: a, b: b, c: c}
+    // }
+    // module.b = module.b || {}
+
+    // {
+    //     const a = 10
+    //     const b = 20
+    //     const c = function () {}
+    //     module.c = {a: a, b: b, c: c}
+    // }
+    // module.c = module.c || {}
+    // module.d = module.d || {}
+    // console.log(module)
+
+    //클로저 (closure) 
+    // function  a () {
+        // var b = 0
+        // return function () {
+            // console.log(++b)
+        // }
+    // }
+    // var c = a()
+    // c()
+    // c()
+    // c()
+    // c()
     
+    /*
+    var a = 1
+    function f1(num) {
+        var b = num + 1
+        return b
+    }
+    console.log(f1(a)) 
+    */
+    
+    /*
+    var a = {msg: 'a는 1급 객체입니다.'}
+    function f1 (a) {
+        var b = a
+        b.ms2 = '이것은 2번째 메세지 입니다.'
+        return b
+    }
+    console.log(f1(a))
+    
+
+    function a () {}
+    a.msg = 'test'
+    console.log(a)
+
+    */
+   /*
+    var a = function (num) {
+        return num * num
+    }
+
+    function b (fun) {
+        var num = fun(10)
+        
+        return function (num2) {
+            var num2 = num2 || 2
+            return num * num2
+        }
+    }
+
+    var c = b(a)
+    console.log(c())
+    console.log(c(3))
+
+    */
+
+    /*
+    var fn = function() {
+        var num = 1
+        return function () {
+            return num++
+        }
+    }
+
+    var fn2 = fn()
+
+    console.log(fn2())
+    console.log(fn2())
+    console.log(fn2())
+    console.log(fn2())
+
+    */
+
+    
+
+
+
+
+
+
+
+
+
 
 </script>

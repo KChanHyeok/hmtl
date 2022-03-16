@@ -11,57 +11,54 @@
 
     DEFAULT_URL = 'https://jsonplaceholder.typicode.com/'
     RESPONSE_TYPE = 'json'
-
-    a
     
+    // class BaseResponse {
+
+    //     // private 
+    //     // this.response
+    //     constructor(response) {
+    //         this.__response = response
+    //     }
+
+    //     // public
+    //     getResult() {
+    //         if (this.__response.ok) {
+    //             const result = this._getResult(this.__response)
+    //             return result
+    //         } else {
+    //             Promise.reject(this.__response.status)
+    //         }
+    //     }
+    //     response() {
+    //         return this.response
+    //     }
+
+    //     // protected
+    //     _getResult() {
+    //         throw new Error('not implementation')
+    //     }
+    // }
+
+    // class JsonResponse extends BaseResponse {
+    //     _getResult(res) {
+    //         const json = res.json()
+    //         return json
+    //     }
+    // }
+
+    // class TextResponse extends BaseResponse {
+    //     _getResult(res) {
+    //         const text = res.text()
+    //         return text
+    //     }
+    // }
     
-    class BaseResponse {
-
-        // private 
-        // this.response
-        constructor(response) {
-            this.__response = response
-        }
-
-        // public
-        getResult() {
-            if (this.__response.ok) {
-                const result = this._getResult(this.__response)
-                return result
-            } else {
-                Promise.reject(this.__response.status)
-            }
-        }
-        response() {
-            return this.response
-        }
-
-        // protected
-        _getResult() {
-            throw new Error('not implementation')
-        }
-    }
-
-    class JsonResponse extends BaseResponse {
-        _getResult(res) {
-            const json = res.json()
-            return json
-        }
-    }
-
-    class TextResponse extends BaseResponse {
-        _getResult(res) {
-            const text = res.text()
-            return text
-        }
-    }
-    
-    class BlobResponse extends BaseResponse {
-        _getResult(res) {
-            const blob = res.blob()
-            return blob
-        }
-    }
+    // class BlobResponse extends BaseResponse {
+    //     _getResult(res) {
+    //         const blob = res.blob()
+    //         return blob
+    //     }
+    // }
 
     class APICaller {
         constructor() {}
@@ -85,64 +82,54 @@
 
         async get(url, params){
             const response = await fetch(this._mergeUrl(url, params))
-            const jsonResponse = new JsonResponse(response)
-            JsonResponse = jsonResponse.getResult()
-            return JsonResponse
-
-            // const textResponse = new TextResponse(response)
-            // TextResponse = textResponse.getResult()
-            // return TextResponse
-
-            // const blobResponse = new BlobResponse(response)
-            // BlobResponse = blobResponse.getResult()
-            // return BlobResponse
+            return response
         }
 
         async post(url, data, params){
-            return await fetch(this._mergeUrl(url, params), {
+            const response = await fetch(this._mergeUrl(url, params), {
                 method: 'POST',
                 headers: {'Content-type': `application/${RESPONSE_TYPE}; charset=UTF-8`}, // application/json, application/x-www-urlencoded
                 body: JSON.stringify(data),
             })
+            return response
         }
 
         async put(url, data, params){
-            return await fetch(this._mergeUrl(url, params), {
+            const response = await fetch(this._mergeUrl(url, params), {
                 method: 'PUT',
                 body: JSON.stringify(data),
-                headers: {'Content-type': 'application/json; charset=UTF-8'},
+                headers: {'Content-type': `application/${RESPONSE_TYPE}; charset=UTF-8`},
             })
+            return response 
         }
         async delete(url, params){
-            return await fetch(this._mergeUrl(url, params), {
+            const response = await fetch(this._mergeUrl(url, params), {
                 method: 'DELETE'
             })
+            return response
         }
         async patch(url, params){
-            return await fetch(this._mergeUrl(url, params), {
+            const response = await fetch(this._mergeUrl(url, params), {
                 method: 'PATCH',
                 body: JSON.stringify({
                     title: 'foo'
                 }),
-                headers: {'Content-type': 'application/json; charset=UTF-8'}
+                headers: {'Content-type': `application/${RESPONSE_TYPE}; charset=UTF-8`}
             })
+            return response
         }
     }
 
     let apiCaller = new APICaller()
 
     async function main(num) {
-        const response = await apiCaller.get(`/posts/${num}`)
-        console.log(response)
+        console.log(apiCaller.get(`/posts/${num}`))
         apiCaller.post(`/posts/`,{ title: 'tt', body: 'hello'},'application/x-www-urlencoded')
         apiCaller.put(`/posts/${num}` , { title: 'test', body: 'I am testing', userId: 1})
         apiCaller.patch(`/posts/${num}`, { title: 'foo'})
         apiCaller.delete(`/posts/${num}`)
     }
     main(1)
-    
-
-    
 
     </script>
 </body>
