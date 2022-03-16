@@ -119,15 +119,18 @@
     }
 
     let apiCaller = new APICaller()
-
     async function main(num) {
-        console.log(apiCaller.get(`/posts/${num}`))
-        apiCaller.post(`/posts/`,{ title: 'tt', body: 'hello'},'application/x-www-urlencoded')
-        apiCaller.put(`/posts/${num}` , { title: 'test', body: 'I am testing', userId: 1})
-        apiCaller.patch(`/posts/${num}`, { title: 'foo'})
-        apiCaller.delete(`/posts/${num}`)
+        let res = await apiCaller.get(`/posts/${num}`) 
+        console.log(await res.json())
+        res = await apiCaller.post(`/posts/`,{ title: 'tt', body: 'hello'}) 
+        console.log(await res.json())
+
+        // apiCaller.put(`/posts/${num}` , { title: 'test', body: 'I am testing', userId: 1})
+        // apiCaller.patch(`/posts/${num}`, { title: 'foo'})
+        // apiCaller.delete(`/posts/${num}`)
     }
-    main(1)
+    
+    console.log(main(1))
 
     </script>
 </body>
