@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    class EventListener{
+        constructor () {
+            this._listeners = []
+        }
+
+        addListner(listener){  // listener === function
+            this._listeners.push(listener)
+        }
+
+        removeListener(listener) {
+            const idx = this._listeners.indexOf(listener)
+            this._listeners.splice(idx, 1)
+        }
+
+        emit(value) {
+            for (var listener of this._listeners) {
+                listener(value)
+            }
+        }
+    }
+
+    function lisener1 (e) {
+        console.log('lisener1', e)
+    }
+
+    function lisener2 (e) {
+        console.log('lisener2', e)
+    }
+
+    function lisener3 (e) {
+        console.log('lisener3', e)
+    }
+
+    const event = new EventListener()
+
+    event.addListner(lisener1)
+    event.addListner(lisener2)
+    event.addListner(lisener3)
+
+    event.emit('이벤트 리스너 만들었다')
+
+    event.removeListener(lisener2)
+
+    console.log('**************************************************')
+
+    event.emit('이벤트 리스너 만들었다')
+    
+
+    </script>
+</body>
+</html>
