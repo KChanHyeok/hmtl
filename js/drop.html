@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        #box{
+        #box1, #box2{
             margin-right: 10px;
             float: left;
             width: 200px;
@@ -23,30 +23,31 @@
     </style>
 </head>
 <body>
-    <div id="box" ondrop="drop(event)" ondragover="dragOver(event)">
-        <div id="drag1" draggable="true" ondragstart="drag(event)"> <p>1</p> </div>
-        <div id="drag2" draggable="true" ondragstart="drag(event)"> <p>2</p> </div>
-        <div id="drag3" draggable="true" ondragstart="drag(event)"> <p>3</p> </div>
+
+    <div id="box1" ondrop="drop(event)" ondragover="dragOver(event)">
+        <div id="drag1" draggable="true" ondragstart = drag(event)><p>1</p></div>
+        <div id="drag2" draggable="true" ondragstart = drag(event)><p>2</p></div>
+        <div id="drag3" draggable="true" ondragstart = drag(event)><p>3</p></div>
     </div>
-    <div id="box" ondrop="drop(event)" ondragover="dragOver(event)"></div>
-    <div id="box" ondrop="drop(event)" ondragover="dragOver(event)"></div>
-    <div id="box" ondrop="drop(event)" ondragover="dragOver(event)"></div>
-    <div id="box" ondrop="drop(event)" ondragover="dragOver(event)"></div>
-    <div id="box" ondrop="drop(event)" ondragover="dragOver(event)"></div>
+    <div id="box2" ondrop="drop(event)" ondragover="dragOver(event)"></div>
+    <div id="box3" ondrop="drop(event)" ondragover="dragOver(event)"></div>
+    <div id="box4" ondrop="drop(event)" ondragover="dragOver(event)"></div>
+    <div id="box5" ondrop="drop(event)" ondragover="dragOver(event)"></div>
+    <div id="box6" ondrop="drop(event)" ondragover="dragOver(event)"></div>
 
     <script>
-        function drag(e) {
-            console.log(e.target.id)
-            e.dataTransfer.setData('text',e.target.id)
+        function drag(e){
+            e.dataTransfer.setData('boxs',e.target.id) // 첫번째 매개변수로 포맷 문자열을 지정, 첫번째 매개변수에 지정한 포맷과 일치하는 값을 두번째 매개 변수로 지정
+            console.log(e.dataTransfer)
+            console.log(e.target)
         }
-
-        function drop(e) {
+        function drop(e){ // 드래그가 끝나서 드래그 하던 객체를 놓는 장소에 위치한 객체에서 발생함
             e.preventDefault()
-            var data = e.dataTransfer.getData('text')
-            e.target.appendChild(document.getElementById(data))
-            // console.log(data)
+            console.log(e.dataTransfer.getData('boxs'))
+            var data = e.dataTransfer.getData('boxs') //첫번째 매개변수에 지정한 포맷의 전송 데이터를 반환 지정된 포맷의 데이터가 지정되어 있지 않으면 공백 문자열을 반환
+            e.target.appendChild(document.getElementById(data)) 
         }
-        function dragOver(e) {
+        function dragOver(e) { //드래그 하면서 마우스가 대상 객체의 위에 자리 잡고 있을때 발생
             e.preventDefault()
         }
     

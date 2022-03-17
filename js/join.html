@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .joinBox {
+            border: 1px solid black;
+            border-radius: 30px;
+            width: 400px;
+            height: 520px;
+            background-color: cornsilk;
+        }
+        .Box{
+            text-align: center;
+            margin: 30px;
+        }
+
+        .textBox{
+            padding: 5px;
+        }
+
+        .text{
+            font-size: 20px;
+        }
+        #title{
+            background-color: floralwhite;
+        }
+        #id_box{
+            
+        }
+        
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div class="joinBox">
+        <div id="id_box" class="Box">
+            <div id="title">
+                <h1>회원가입</h1>
+            </div>
+            <span class="text"> 아이디 : </span> 
+            <input class="textBox" onkeyup="idText(event)" type="textbox" > <br>
+        </div>
+        <div id="name_box" class="Box">
+            <span class="text"> 이름 : </span>
+            <input class="textBox" type="textbox" onkeyup="nameText(event)" ><br>
+        </div>
+        <div id="password_box" class="Box">
+            <span class="text"> 비밀번호 : </span>
+            <input class="textBox" type="password" onkeyup="passwordText(event)" ><br>
+        </div>
+        <div id="areaBox" class="Box">
+            <span class="text">지역 : </span>
+            <select class="textBox" d="area" onclick="selectChoose(event)" >
+                <option value="" selected>지역선택</option>
+                <option value="서울">서울</option>
+                <option value="인천">인천</option>
+                <option value="대구">대구</option>
+                <option value="부산">부산</option>
+                <option value="경기">경기</option>
+            </select><br>
+        </div>
+        <div id="hobbyBox" class="Box">
+            <span class="text">취미 : </span> 
+            <input type="checkbox" value="연주" onclick="checkBox(event)">연주</input> 
+            <input type="checkbox" value="게임" onclick="checkBox(event)">게임</input> 
+            <input type="checkbox" value="만화" onclick="checkBox(event)">만화</input>
+            <input type="checkbox" value="춤" onclick="checkBox(event)">춤</input>
+            <input type="checkbox" value="운동" onclick="checkBox(event)">운동</input><br>
+        </div>
+        <div id="agreementBox" class="Box">
+            <span> 약관동의 : </span>
+            <input onclick="consent(event)" name="동의" type="radio">
+            <span> 동의 취소 : </span>
+            <input onclick="cancel(event)" type="radio" name="동의"><br>
+        </div>
+        <div class="Box" id="confirmBox">
+            <button id="Confirm" disabled=false onclick="ok()" >확인</button> <button>취소</button>
+        </div>
+    </div>
+
+    <script>
+        let id = ''
+        let name = ''
+        let password = ''
+        let area = ''
+        let hobby = []
+
+        function idText(e) {
+            id = e.target.value
+        }
+        function nameText(e){
+            name = e.target.value
+        }
+        function passwordText(e){
+            password = e.target.value
+        }
+        function selectChoose(e){
+            area = e.target.value
+            console.log(e.target.value)
+        }
+
+
+        function consent(e) {
+            document.getElementById('Confirm').disabled = false
+            
+        }
+        function cancel(){
+            document.getElementById('Confirm').disabled = true
+        }
+
+        function checkBox(e){
+            if(e.target.checked === false){
+                hobby.pop(e.target.value)
+            }else{
+                hobby.push(e.target.value) 
+            }
+            console.log(hobby)
+        }
+
+        function ok(e){
+            alert(`
+                아이디: ${id}
+                이름: ${name}
+                비밀번호: ${password}
+                지역: ${area}
+                취미: ${hobby}`
+            )
+        } 
+        
+
+    </script>
+</body>
+</html>
