@@ -13,18 +13,26 @@
             background-color: cornsilk;
         }
         .Box{
-            text-align: center;
+            display: flex;
+            justify-content: center;
             margin: 30px;
+
         }
 
         .textBox{
+            border: none;
             padding: 5px;
         }
 
         .text{
+            margin-right: 10px;
             font-size: 20px;
         }
+        .checkBoxs{
+            
+        }
         #title{
+            text-align: center;
             background-color: floralwhite;
         }
         #id_box{
@@ -36,10 +44,10 @@
 </head>
 <body>
     <div class="joinBox">
+        <div id="title">
+            <h1>회원가입</h1>
+        </div>
         <div id="id_box" class="Box">
-            <div id="title">
-                <h1>회원가입</h1>
-            </div>
             <span class="text"> 아이디 : </span> 
             <input class="textBox" onkeyup="idText(event)" type="textbox" > <br>
         </div>
@@ -64,17 +72,17 @@
         </div>
         <div id="hobbyBox" class="Box">
             <span class="text">취미 : </span> 
-            <input type="checkbox" value="연주" onclick="checkBox(event)">연주</input> 
-            <input type="checkbox" value="게임" onclick="checkBox(event)">게임</input> 
-            <input type="checkbox" value="만화" onclick="checkBox(event)">만화</input>
-            <input type="checkbox" value="춤" onclick="checkBox(event)">춤</input>
-            <input type="checkbox" value="운동" onclick="checkBox(event)">운동</input><br>
+            <input class="checkBoxs" type="checkbox" value="연주" onclick="checkBox(event)"></input> 
+            <input class="checkBoxs" type="checkbox" value="게임" onclick="checkBox(event)">게임</input> 
+            <input class="checkBoxs" type="checkbox" value="만화" onclick="checkBox(event)">만화</input>
+            <input class="checkBoxs" type="checkbox" value="춤" onclick="checkBox(event)">춤</input>
+            <input class="checkBoxs" type="checkbox" value="운동" onclick="checkBox(event)">운동</input><br>
         </div>
         <div id="agreementBox" class="Box">
             <span> 약관동의 : </span>
             <input onclick="consent(event)" name="동의" type="radio">
-            <span> 동의 취소 : </span>
-            <input onclick="cancel(event)" type="radio" name="동의"><br>
+            <span> 동의취소 : </span>
+            <input onclick="cancel(event)" name="동의" type="radio" ><br>
         </div>
         <div class="Box" id="confirmBox">
             <button id="Confirm" disabled=false onclick="ok()" >확인</button> <button>취소</button>
