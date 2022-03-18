@@ -1,0 +1,42 @@
+<!DOMTYPE html>
+<html lang="ko">
+    <head>
+        <style>
+            a:link{  /* a: link 방문전 링크 상태*/
+                color: green;
+                background-color: transparent; /* transparent 초기값을 의미함 */
+                text-decoration: none;
+            }
+            a:visited{  /* a: visited 방문 후 링크 상태*/
+                color: pink;
+                background-color: transparent;
+            }
+            a:hover { /* a:hover 마우스 오버했을때 링크 상태*/
+                color: red;
+                background-color: transparent;
+                text-decoration: underline;  /* 전체 문단에 밑줄이 쳐진다*/
+            }
+            a:active{ /* a:active 클릭했을때 링크 상태 */
+                color: yellow;
+                background-color: transparent;
+                text-decoration: underline;
+            }
+            /* a:link, a:visited {
+                background-color: red;
+                color: white;
+                padding: 15px 25px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+            }
+            a:hover, a:active {
+                background-color: blue;
+            } */
+        </style>
+    </head>
+    <body>
+        <h2>Link Button</h2>
+        <p>A link styled as a button:</p>
+        <a href="https://www.google.com" target="_blank">This is a link</a>
+    </body>
+</html>

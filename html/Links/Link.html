@@ -1,0 +1,52 @@
+<!DOMTYPE html>
+<html lang="ko">
+    <body>
+        <!-- 하이퍼 링크  -->
+        <h1>HTML Links</h1>
+        <p><a href="https://www.google.com">Visit google.com</a></p>
+        <hr>
+        <!-- target 속성은 링크된 문서를 열 위치를 지정한다. 
+            _self - 기본.클릭한 것과 동일한 창/탭에서 문서를 연다
+            _blank - 문서를 새창이나 탭에서 연다
+            _parent - 부모 프레임에서 문서를 연다
+            _top - 창의 전체 본문에서 문서를 연다
+        -->
+        <p><a href="https://www.google.com" target="_self">_self</a></p>
+        <p><a href="https://www.google.com" target="_blank">_blank</a></p>
+        <p><a href="https://www.google.com" target="_parent">_parent</a></p>
+        <p><a href="https://www.google.com" target="_top">_top</a></p>
+        <hr>
+        <!-- Use an Image as a Link 이미지 링크 이미지를 클릭하면 이미지에 입력해둔 주소로 하이퍼링크를 탈수 있다. -->
+        <h2>Image as a Link</h2>
+        <p>The image below is a link. Try to click on it.</p>
+        <a href="https://www.google.com"><img src="https://www.w3schools.com/html/smiley.gif" alt="HTML tutorial" style="width: 42px; height: 42px;"></a>
+        <hr>
+        <!-- Link to an Email Address 이메일 주소 링크 mailto: 속성 내부를 사용 href 하여 사용자의 이메일 프로그램을 여는 링크를 생성함 -->
+        <h1>Link to an Email Address</h1>
+        <p>To create a link that opens in the user's email program (to let them send a new email), use mailto: inside the href attribute</p>
+
+        <p><a href="mailto:someone@example.com">Send email</a></p>
+        <hr>
+        <!-- Link Title 링크에 타이틀을 담아 설명및 내용을 작성 -->
+        <h2>Link Titles</h2>
+        <p>
+        The title attribute specifies extra information about an 
+        element. The information is most often shown as a tooltip text 
+        when the mouse moves over the element.</p>
+        <a href="https://www.google.com" title="Go to google">Visit google</a>
+        <hr> 
+        <!-- More on Absolute URLs and Relative URLs 절대 URL 및 상대 URL에 대한 추가 정보 -->
+        <h2>External Paths</h2>
+
+        <p>This example uses a full URL to link to a web page:</p>
+        <p><a href="https://www.w3schools.com/html/default.asp">HTML tutorial</a></p>
+        <!-- 
+        Use the <a> element to define a link
+        Use the href attribute to define the link address
+        Use the target attribute to define where to open the linked document
+        Use the <img> element (inside <a>) to use an image as a link
+        Use the mailto: scheme inside the href attribute to create a link that opens the user's email program
+        -->
+
+    </body>
+</html>
