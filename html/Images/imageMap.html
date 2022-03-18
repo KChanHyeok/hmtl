@@ -3,13 +3,28 @@
     <body>
         <!-- Image Maps -->
         <!-- Example -->
+        <!-- usemap = map을 넣기 전 이미지의 이름 또는 아이디이다 -->
+        <!-- 맵을 생성할 때 <map name=''> -->
+        <!-- shape은 영역의 모양및 형태를 말한다
+            rect - 직사각형 영역을 정의함 (0, 0, 0, 0)
+            circle - 원형 영역을 정의 (0, 0, 0)
+            poly - 다각형 영역을 정의 (intinit 많다...)
+            default - 전체 지역을 정의
+        -->
+        <!-- coords 영역의 좌표와 크기를 넣어줘야 영역의 위치를 잡을수 있음 -->
         <h2>Image Maps</h2>
         <p>Click on the computer, the phone, or the cup of coffee to go to a new page and read more about the topic:</p>
         <img src="https://www.w3schools.com/html/workplace.jpg" alt="Workplace" usemap="#workmap"
         width="400" height="379">
         <map name="workmap">
             <area shape="rect" coords="33, 44, 270, 350" href="./Example/computer.html" alt="computer">
-            <area shape="circle" coords="337, 300, 44" href="./Example/coffee.html" alt="coffee">
+            <area shape="circle" coords="337, 300, 44" href="./Example/coffee.html" alt="coffee" onclick="onClickCoffee(event)">
+            <area shape="rect" coords="290,172,333,250" href="./Example/phone.html" alt="phone">
         </map>
+        <script>
+            const onClickCoffee = () => {
+                alert('You clicked the coffee cup!') 
+            }
+        </script>
     </body>
 </html>

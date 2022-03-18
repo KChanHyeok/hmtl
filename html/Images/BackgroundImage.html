@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body{
+                background-image: url('https://www.w3schools.com/html/img_girl.jpg'); /* 그냥 background-image만 이미지를 가져오면 반복된 이미지로 바둑처럼 배경에 적용됨*/
+                background-repeat: no-repeat;  /* background-repeat를   no-repeat로 하면 배경이미지가 반복이 되는 것을 막을수 있다.*/
+                background-attachment: fixed; /* 이미지가 전체 요소에 항상 포함되도록 하려면 background-attachment 속성을 다음으로 설정해야함 */
+                /* 
+                fixed: 배경을 뷰포트에 대해 고정합니다. 요소에 스크롤이 존재해도 배경은 함께 스크롤되지 않습니다.
+                local: 배경을 요소 콘텐츠에 대해 고정한다. 요소에 스크롤이 존재하면 배경은 콘텐츠와 함께 스크롤 된다.
+                scroll: 배경을 요소 자체에 대해 고정한다. 요소에 스크롤이 존재해도 배경은 함께 스크롤 되지 않는다.
+                */
+                background-size: cover; /* backfround-size 속성을 부여하면 배경이미지가 body의 전체 위치로 꽉 채워짐  width height 값을 설정 할수 있음*/
+            }
+            #p-background-image{
+                background-image: url('https://www.w3schools.com/html/img_girl.jpg');
+            }
+        </style>
+    </head>
+    <body>
+        <!-- HTML 요소의 배경 이미지 -->
+        <h1>Backfround Image</h1>
+
+        <p>A background image for a element:</p>
+        <!-- 스타일을 활용하여 배경 이미지 주소값을 넣어 활용함 -->
+        <p style="background-image: url('https://www.w3schools.com/html/img_girl.jpg');">
+        You can specify background images<br>
+        for any visible HTML element.<br>
+        In this example, the background image<br>
+        is specified for a p element.<br>
+        By default, the background-image<br>
+        will repeat itself in the direction(s)<br>
+        where it is smaller than the element<br>
+        where it is specified. (Try resizing the<br>
+        browser window to see how the<br>
+        background image behaves.<br>
+        </p>
+
+        <p id="p-background-image">
+        You can specify background images<br>
+        for any visible HTML element.<br>
+        In this example, the background image<br>
+        is specified for a div element.<br>
+        By default, the background-image<br>
+        will repeat itself in the direction(s)<br>
+        where it is smaller than the element<br>
+        where it is specified. (Try resizing the<br>
+        browser window to see how the<br>
+        background image behaves.
+        </p>
+        
+    </body>
+</html>
