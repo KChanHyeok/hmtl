@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h1>My Fist JavaScript</h1>
+        <button onclick="data()">Click me to display Date and Time</button>
+        <p id="time"></p>
+        <hr>
+        <h2>Use JavaScript to Change Text</h2>
+        <p>This example writes "Hello Javascript!" into an HTML element with id="demo"</p>
+        <p id="demo"></p>
+        <hr>
+        <h2>My First JavaScript</h2>
+        <p id="bimo">javaScript can change the style of an HTML element.</p>
+        <button onclick="onStyleChange()">Click Me!</button>
+        <hr>
+        <h2>My First JavaScript</h2>
+        <p>Here, a javaScript change the value of the src (source) attribute of an image.</p>
+        <img src="https://www.w3schools.com/html/pic_bulboff.gif" alt="" id="light"><br>
+        <button onclick="onLight(1)">Light On</button> <button onclick="onLight(0)">Light Off</button>
+
+        <script>
+            const data = () => {
+                document.getElementById('time').innerHTML = Date()
+            }
+            const onStyleChange = () => {
+                const bimo = document.getElementById('bimo')
+                bimo.style.backgroundColor = "yellow"
+                bimo.style.color = "red"
+                bimo.style.fontSize = '25px'
+            }
+            document.getElementById('demo').innerHTML = 'Hello JavaScript'
+
+            const onLight = (e) => {
+                if(e===1){
+                    document.getElementById('light').src='https://www.w3schools.com/html/pic_bulbon.gif'
+                }else{
+                    document.getElementById('light').src='https://www.w3schools.com/html/pic_bulboff.gif'
+                }
+            } 
+
+        </script>
+    </body>
+</html>
