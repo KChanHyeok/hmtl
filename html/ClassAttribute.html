@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <style>
+            .city{
+                color: white;
+                margin: 20px;
+                padding: 20px;
+                background-color: tomato;
+                border: 2px solid black;
+            }
+            .note{
+                font-size: 120%;
+                color: red;
+            }
+            .cite{
+                color: white;
+                padding: 10px;
+                background-color: tomato;
+            }
+            .main{
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="city">
+            <h2>London</h2>
+            <p>London is the capital of England</p>
+        </div>
+        <div class="city">
+            <h2>Paris</h2>
+            <p>Paris is the capital of France</p>
+        </div>
+        <div class="city">
+            <h2>Tokyo</h2>
+            <p>Tokyo is the capital of Japan</p>
+        </div>
+        <hr>
+        <h1>My <span class="note">Important</span> Heading</h1>
+        <p>This is some <span class="note">important</span> text</p>
+        <hr>
+        <h2>The class Attribute</h2>
+        <p>Use CSS to style elements with the class name "city":</p>
+
+        <h2 class="cite">London</h2>
+        <p>London is the capital of England</p>
+
+        <h2 class="cite">Paris</h2>
+        <p>Paris is the capital</p>
+
+        <h2 class="cite">Tokyo</h2>
+        <p>Tokyo is the capital of Japan.</p>
+        <hr>
+        <h2>Multiple Classes</h2>
+        <h2 class="cite main">London</h2>
+        <p>London is the capital of England</p>
+
+        <h2 class="cite">Paris</h2>
+        <p>Paris is the capital</p>
+
+        <h2 class="cite">Tokyo</h2>
+        <p>Tokyo is the capital of Japan.</p>
+
+        <hr>
+
+        <h2>Different Elements Can Share Same Class</h2>
+        <p>Event if the two elements do not have the same tag name, they can both point to the same class, and get
+            the same CSS styling:
+        </p>
+        <h2 class="cite">Paris</h2>
+        <p class="cite">paris ius the capital of France</p>
+        <hr>
+        <h2>Use of The class Attribute in JavaScript</h2>
+        <p>Click the button to hide all elements with class name "city":</p>
+        <button onclick="onClickEvent()">Hide elements</button>
+        <h2 class="clean">London</h2>
+        <p>London is the capital of England</p>
+        <h2 class="clean">Paris</h2>
+        <p>Paris is the capital of France</p>
+        <h2 class="clean">Tokyo</h2>
+        <p>Tokyo is the capital of Japan</p>
+
+        <script>
+            const onClickEvent = () => {
+                let x = document.getElementsByClassName('clean')
+                for(var i=0; i<x.length; i++){
+                    x[i].style.display = 'none'
+                }
+            }
+        </script>
+    </body>
+</html>
