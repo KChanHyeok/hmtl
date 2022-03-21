@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            /* p{
+                color: red;
+                text-align: center;
+            } */
+            #paral{
+                color: red;
+                text-align: center;
+            }
+            .center{
+                color: red;
+                text-align: center;
+            }
+            p.city{
+                color: red;
+                text-align: center;
+            }
+            p.cute{
+                color: red;
+                text-align: center;
+            }
+            p.large {
+                font-size: 300%;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- 
+            Simple selectors 단순 선택기(이름, ID, 클래스를 기반으로 요소 선택)
+            Combinator selectors 결합자 선택기 (요소 간의 특정 관계를 기반으로 요소 선택)
+            pseudo-class selectors 유사 클래스 선택기 (특정 상태를 기반으로 요소 선택)
+            pseudo-elements selectors 유사 요소 선택기 (요소의 일부를 선택하고 스타일 지정)
+            Attribute selectors 속성 선택기 (속성 또는 속성 값을 기반으로 요소 선택)
+        -->
+
+        <p> Every paragraph will be affected by the style.</p>
+        <p>Me too!</p>
+        <p>And me!</p>
+        <hr>
+        <p id="paral">Hello World!</p>
+        <p>This paragraph is not affected by the style.</p>
+        <hr>
+        <h1 class="center">Red and center-aligned heading</h1>
+        <p class="center">Red and center-aligned paragraph</p>
+        <hr>
+        <h1 class="city">This heading will not be affected</h1>
+        <p class="city">This paragraph will be red and center-aligned</p>
+        <hr>
+        <h1 class="cute">This heading will not be affected</h1>
+        <p class="cute">This paragraph will be red and center-aligned.</p>
+        <p class="cute large">This paragraph will be red, center-aligned, and in a large font-size.</p>
+        
+    </body>
+</html>
