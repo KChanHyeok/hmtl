@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <style>
+            .Allbrowser{
+                margin: 0;
+                padding: 5px;
+                background-color: lightgray;
+            }
+            .Allbrowser > h1, .browser{
+                margin: 10px;
+                padding: 5px;
+            }
+
+            .browser{
+                background-color: white;
+            }
+            .browser > h2 , p{
+                margin: 4px;
+                font-size: 90%;
+            }
+            aside{
+                width: 30%;
+                padding-left: 15px;
+                margin-left: 15px;
+                float: right ;
+                font-style: italic;
+                background-color: lightgray;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- 
+            section chapters, introduction, NewsItems, ContactInformation(장, 소개, 뉴스항목, 연락처정보)
+         -->
+        <section>
+            <h1>WWF</h1>
+            <p>The World Wide Fund for Nature(WWF) is an international organization working on issues regarding the conservation, research and restoration of the environment, formerly named the World Wildlife Fund. WWF was founded in 1961.</p>
+        </section>
+
+        <section>
+            <h1>WWF's panda symbol</h1>
+            <p>The Panda has become the symbol of WWF. The well-known panda logo of WWF originated from a panda named Chi Chi that was transferred from the Beijing Zoo to the London Zoo in the same year of the establishment of WWF.</p>
+        </section>
+        <hr>
+        <!-- ForumPost, BlogPosts, UserComments, ProductCards, NewspaperArticles (포럼 게시물, 블로그 게시물, 사용자 의견, 제품 카드, 신문 기사들) -->
+        <h1>The article element</h1>
+        <article>
+            <h2>Google Chrome</h2>
+            <p>Google Chrome is a web browser developed by Google, released in 2008. Chrome is the world's most popular web browser today!</p>
+        </article>
+        <article>
+            <h2>Mozilla Firefox</h2>
+            <p>Mozilla Firefox is an open-source web browser developed by Mozilla. Firefox has been the second most popular web browser since January, 2018</p>
+        </article>
+        <article>
+            <h2>Microsoft Edge</h2>
+            <p>Microsoft Edge is a web browser developed by Microsoft, released in 2015. Mincrosoft Edge replaced Internet Explorer.</p>
+        </article>
+        <hr>
+        <article class="Allbrowser">
+            <h1>Most Popular Browsers</h1>
+            <article class="browser">
+                <h2>Google Chrome</h2>
+                <p>Google Chrome is a web browser developed by Google, released in 2008. Chrome is the world's most popular web browser today!</p>
+            </article>
+            <article class="browser">
+                <h2>Mozilla Firefox</h2>
+                <p>Mozilla Firefox is an open-source web browser developed by Mozilla. Firefox has been the second most popular web browser since January, 2018</p>
+            </article>
+            <article class="browser">
+                <h2>Microsoft Edge</h2>
+                <p>Microsoft Edge is a web browser developed by Microsoft, released in 2015. Mincrosoft Edge replaced Internet Explorer.</p>
+            </article>
+        </article>
+        <!-- <header> 탐색 링크 집합의 컨테이너를 나타냄 
+            element <header> 
+            1. one or more heading elements (<h1>-<h6>) [하나 이상의 제목 요소]
+            2. Logo or icon  [로고 또는 아이콘]
+            3. authorship information [저작권 정보]
+        -->
+        <hr>
+        <article>
+            <header>
+                <h2>What Does WWF Do?</h2>
+                <p>WWF's mission:</p>
+            </header>
+            <p>WWF's mission is to stop the degradation of our planet's natural environment, and build a future in which humans live in harmony with nature.</p>
+        </article>
+        <hr>
+
+        <!-- 
+            <footer> 
+            
+                1. authorship information (저작권 정보)
+                2. copyright information (저작권 정보)
+                3. contact information (연락처 정보)
+                4. sitemap (사이트맵)
+                5. back to top links (맨 위로 링크로 돌아가기)
+                6. related documents (관련된 문서)
+        -->
+        <footer>
+            <p>Author: Hege Refsnes</p>
+           <p><a href="mailto:hege@example.com">hege@example.com</a></p>
+        </footer>
+        <hr>
+        <!-- <nav>는 탐색 링크 세트를 정의 함 -->
+        <nav>
+            <a href="#">HTML</a> |
+            <a href="#">CSS</a> |
+            <a href="#">JavaScript</a> |
+            <a href="#">jQuery</a>
+        </nav>
+
+        <hr>
+        <!--  요소는 (<aside> 사이바와 같이) 배치된 콘텐ㄴ츠 외에 일부 콘텐츠를 정의 합니다. -->
+        <p>My family and i visited The Epcot center this summer. The weather was nice, and Epcot was amazing! I had a great summer together with my family!</p>
+        <!-- <aside>
+            <h4>Epcot Center</h4>
+            <p>Epcot is a theme park at Walt Disney World Resort
+                featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.
+            </p>
+        </aside> -->
+        <hr>
+        
+        <p>My family and i visited The Epcot center this summer. The weather was nice, and Epcot was amazing! I had a great summer together with my family!</p>
+        <aside>
+            <p>The Epcot center is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.</p>
+        </aside>
+        <p>My family and i visited The Epcot center this summer. The weather was nice, and Epcot was amazing! I had a great summer together with my family!</p>
+        <p>My family and i visited The Epcot center this summer. The weather was nice, and Epcot was amazing! I had a great summer together with my family!</p>
+        
+        <hr>
+        <!-- <figure> 및 <figcaption> 
+            <figure> 일러스트레이션, 다이어그램, 사진, 코드 목록 등과 같은 자체 포함된 콘텐츠를 지정함
+            태그는 요소의 <figcaption> 캡션을 정의 한다. <figure> 요소는 <figcaption> 요소의 첫 번째 또는 마지막 자식으로 배치 할 수 있다. <figure> 요소는 img 실제 이미지/그림을 정의함
+        -->
+        <h2>Places to Visit</h2>
+        <p>Puglia's most famous sight is the unique conical houses(Trulli) found in the area around Alberobello, a declared UNESCO world Heritage Site.</p>
+        <figure>
+            <img src="https://www.w3schools.com/html/pic_trulli.jpg" alt="Trulli" style="width: 100%;">
+            <figcaption>Fig.1 - Trulli, Puglia, Italy.</figcaption>
+        </figure>
+
+
+    </body>
+</html>
