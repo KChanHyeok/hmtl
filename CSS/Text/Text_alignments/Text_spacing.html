@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <style>
+            /* text-indent 속성은 텍스트의 첫번째 줄 들여쓰기를 지정하는 사용된다.*/
+            p.text_indent {
+                text-indent:50px;
+            }
+            h2.ex {
+                letter-spacing: 5px;
+            }
+            /* letter-spacing은  문자간의 간격 텍스트엣 문자 사이의 공백을 지정하는데 사용된다.
+                늘이거나 줄일 수 있음
+            */
+            h3.ex {
+                letter-spacing: -2px;
+            }
+            p.small {
+                line-height: 0.6;
+            }
+            p.big {
+                line-height: 1.8;
+            }
+            p.one {
+                word-spacing: 10px;
+            }
+            p.two {
+                word-spacing: -7px;
+            }
+            p.white-space {
+                white-space: nowrap;
+                /* 텍스트 줄 바꿈을 비활성화 하는 방법을 보여준다. */
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Using text-indent</h1>
+        <p class="text_indent">
+            In my younger and more vulerable years my father gave me some advice that I've been turning over in my mind ever since. 'Whenever you feel like criticizing anyone,' he told me, 'just remember that all the people in this world haven't had the advantages that you've had.'
+        </p>
+        <hr>
+        <h1>Using letter-spacing</h1>
+        <h2 class="ex">This is heading 1</h2>
+        <h3 class="ex">This is heading 2</h3> 
+        <hr>
+        <h2>Using line-height</h2>
+        <p style="text-indent: 0px;">
+            This is a paragraph with a standard line-height.<br>
+            The default line height in most browsers is about 110% to 120%<br>
+        </p>
+
+        <p class="small" style="text-indent: 0px;">
+        This is a paragraph with a smaller line-height.<br>
+        This is a paragraph with a smaller line-height.<br>
+        </p>
+
+        <p class="big" style="text-indent: 0px;">
+        This is a paragraph with a bigger line-height.<br>
+        This is a paragraph with a bigger line-height.<br>
+        </p>
+        <hr>
+        <h2>Using word-spacing</h2>
+        <p>This is a paragraph with normal word spacing.</p>
+        <p class="one">This is a paragraph with larger word spacing.</p>
+        <p class="two">This is a paragraph with smaller word spacing.</p>
+        <hr>
+        <h1>Using white-space</h1>
+        <p class="white-space"> 
+        This is some text that will not wrap.
+        This is some text that will not wrap.
+        This is some text that will not wrap.
+        This is some text that will not wrap.
+        This is some text that will not wrap.
+        This is some text that will not wrap. 
+        This is some text that will not wrap.
+        This is some text that will not wrap.
+        This is some text that will not wrap.
+        This is some text that will not wrap.
+        </p>
+        <p>Try to remove the white-space property to see the difference!</p>
+        
+    </body>
+</html>

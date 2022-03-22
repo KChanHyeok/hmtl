@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <style>
+            h1.ex{
+                text-decoration: overline;
+                text-decoration-color: red;
+            }
+            h2.ex{
+                text-decoration: line-through;
+                text-decoration-color: blue;
+            }
+            h3.ex{
+                text-decoration: underline;
+                text-decoration-color: green;
+            }
+            p.ex{
+                text-decoration:overline underline;
+                text-decoration-color: purple;
+            }
+            h1.ex1 {
+                text-decoration-line: underline;
+                text-decoration-style: solid;
+            }
+            h2.ex1 {
+                text-decoration-line: underline;
+                text-decoration-style: double;
+            }
+            h3.ex1 {
+                text-decoration-line: underline;
+                text-decoration-style: dotted;
+            }
+            p.ex1 {
+                text-decoration-line: underline;
+                text-decoration-style: dashed;
+            }
+            p.ex2 {
+                text-decoration-line: underline;
+                text-decoration-style: wavy;
+            }
+            p.ex3 {
+                text-decoration-line: underline;
+                text-decoration-style: wavy;
+                text-decoration-color: red;
+            }
+            h1.ex2 {
+                text-decoration-line: underline;
+                text-decoration-thickness: auto; /* text-decoration-thickness 줄의 두께를 나타냄*/
+            }
+            h2.ex2 {
+                text-decoration-line: underline;
+                text-decoration-thickness: 5px;
+            }
+            h3.ex2 {
+                text-decoration-line: underline;
+                text-decoration-thickness: 25%;
+            }
+            p.ex4 {
+                text-decoration-line: underline;
+                text-decoration-color: red;
+                text-decoration-style: double;
+                text-decoration-thickness: 5px;
+            }
+            h1.ex3 {
+                text-decoration: underline;
+            }
+            h2.ex3 {
+                text-decoration: underline red;
+            }
+            h3.ex3 {
+                text-decoration: underline red double;
+            }
+            p.ex5 {
+                text-decoration: underline red double 5px;
+            }
+            a {
+                color: black;
+                text-decoration: none;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 class="ex">Overline text decoration</h1>
+        <h2 class="ex">Line through text decoration</h2>
+        <h3 class="ex">Underline text decoration</h3>
+        <p class="ex">Overline and underline text decoration.</p>
+        <p><strong>Note:</strong>It is not recommended to underline text that is not a link, as this often confuses the reader</p>
+        <hr>
+        <h1 class="ex1">Heading 1</h1>
+        <h2 class="ex1">Heading 2</h2>
+        <h3 class="ex1">Heading 3</h3>
+        <p class="ex1">A paragraph.</p>
+        <p class="ex2">Another paragraph.</p>
+        <p class="ex3">Another paragraph.</p>
+        <hr>
+        <h1 class="ex2">Heading 1</h1>
+        <h2 class="ex2">Heading 2</h2>
+        <h3 class="ex2">Heading 3</h3>
+        <p class="ex4">A paragraph.</p>
+        <hr>
+        <h1 class="ex3">Heading 1</h1>
+        <h2 class="ex3">Heading 2</h2>
+        <h3 class="ex3">Heading 3</h3>
+        <p class="ex5">A paragraph</p>
+        <hr>
+        <h1>Using text-decoration : none</h1>
+        <p>A link with no underline: <a href="./Text_decoration.html" target="_blank">google.com</a></p>
+    </body>
+</html>

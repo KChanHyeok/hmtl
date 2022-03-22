@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <style>
+            p.a {
+                text-align-last: right;
+            }
+            p.b {
+                text-align-last: center;
+            }
+            p.c {
+                text-align-last: justify;
+            }
+            p.ex1 {
+                direction: rtl;
+                unicode-bidi: bidi-override;  /* direction 과 unicode-bidi를 같이 사용하여 요소의 텍스트 방향을 변경 할 수 있다.*/
+            }
+        </style>
+    </head>
+    <body>
+        <h1>The text-align-last Property</h1>
+
+        <h2>text-align-last: right:</h2>
+        <p class="a">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper diam at erat pulvinar, at pulvinar felis blandit. Vestibulum volutpat tellus diam, consequat gravida libero rhoncus ut.</p>
+
+        <h2>text-align-last: center:</h2>
+        <p class="b">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper diam at erat pulvinar, at pulvinar felis blandit. Vestibulum volutpat tellus diam, consequat gravida libero rhoncus ut.</p>
+        
+        <h2>text-align-last: justify</h2>
+        <p class="c">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper diam at erat pulvinar, at pulvinar felis blandit. Vestibulum volutpat tellus diam, consequat gravida libero rhoncus ut.</p>
+        <hr>
+        <p>This is the default text direction</p>
+        <p class="ex1">This is right-to-left text direction</p>
+    </body>
+</html>
