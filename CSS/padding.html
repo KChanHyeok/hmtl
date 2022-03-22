@@ -2,19 +2,80 @@
 <html>
     <head>
         <style>
-            div{
+            div.one {
                 /* padding: 70px;
                 border: 1px solid green; */
                 border: 1px solid black;
                 background-color: lightblue;
                 padding: 50px 30px 50px 80px;
+                /*  padding: top right bottom left */
             }
+            div.two {
+                border: 1px solid black;
+                background-color: lightblue;
+                padding: 25px 50px 75px 100px;
+                /*  padding: top right bottom left */
+            }
+            div.three {
+                border: 1px solid black;
+                background-color: lightblue;
+                padding: 25px 30px 75px;
+                /*  padding: top (right and left) bottom */
+            }
+            div.four {
+                border: 1px solid black;
+                background-color: lightblue;
+                padding: 25px 50px;
+            }
+            div.five {
+                border: 1px solid black;
+                background-color: lightblue;
+                padding: 25px;
+            }
+            div.six-1 {
+                width: 300px;
+                background-color: yellow;
+            }
+            div.six-2 {
+                width: 300px;
+                background-color: lightblue;
+                padding: 25px;
+            }
+            div.seven-1 {
+                width: 300px;
+                background-color: yellow;
+            }
+            div.seven-2 {
+                box-sizing: border-box;
+                width: 300px;
+                padding: 25px;
+                background-color: lightblue;
+            }
+            /*  box-sizing: border-box width의 값에 맞추게 크기가 지정됨 */
         </style>
     </head>
     <body>
         <h2>Using individual padding properties</h2>
-        <div>This div element has a top padding of 50px, a right padding of 30px, a bottom padding of 50px, and a left padding of 80px</div>
-        <!-- <h2>CSS Padding</h2>
-        <div>This element has a padding of 70px</div> -->
+        <div class="one">This div element has a top padding of 50px, a right padding of 30px, a bottom padding of 50px, and a left padding of 80px</div>
+        <hr>
+        <h2>The padding shorthand property - 4 values</h2>
+        <div class="two">This div element has a top padding of 25px, a right padding of 50px, a bottom padding of 75px, and a left padding of 100px.</div>
+        <hr>
+        <h2>The padding shorthand property - 3 values</h2>
+        <div class="three">This div element has a top padding of 25px, a right and left padding of 50px, and a bottom padding of 75px.</div>
+        <hr>
+        <h2>The padding shorthand property - 2 values</h2>
+        <div class="four">This div element. has a top and bottom padding of 25px, and a right and left padding of 50px</div>
+        <hr>
+        <h2>The padding shorthand property - 1 values</h2>
+        <div class="five">This div element has a top, bottom, left, and right padding of 25px.</div>
+        <hr>
+        <h2>Padding and element width</h2>
+        <div class="six-1">The div is 300px wide</div><br>
+        <div class="six-2">The width of this div is 350px, even though it is defined as 300px in the CSS.</div>
+        <hr>
+        <h2>Padding and element width - with box-sizing</h2>
+        <div class="seven-1">This div is 300px wide.</div><br>
+        <div class="seven-2">The width of this div remains at 300px, in spite of the 50px of total left and right padding, because of the box-sizing: border-box property</div>
     </body>
 </html>
