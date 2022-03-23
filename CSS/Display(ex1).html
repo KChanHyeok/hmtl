@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <style>
+            div.box {
+                visibility: inherit;
+                display: block;
+                width: 200px;
+                border: 1px solid black;
+                padding: 0 15px 15px;
+                float: left;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box" id="remove">
+            <p style="text-align: center;">display:none</p>
+            <img src="https://www.w3schools.com/css/img_5terre.jpg" alt="5terre" style="width: 200px;"><br>
+            <button onclick="remove()" style="width: 200px;">제거하다</button>
+        </div>
+        <div class="box" id="hiddened" >
+            <p style="text-align: center;">visibility:hidden</p>
+            <img src="https://www.w3schools.com/css/img_forest.jpg" alt="forest" style="width: 200px;"><br>
+            <button onclick="hiddened()" style="width: 200px;">숨다</button>
+        </div>
+        <div class="box" id="reset">
+            <p style="text-align: center;">초기화</p>
+            <img src="https://www.w3schools.com/css/img_lights.jpg" alt="lights" style="width: 200px;"><br>
+            <button onclick="reset()" style="width: 200px;">모두 초기화</button>
+        </div>
+        <script>
+            const remove = () => {
+                document.getElementById('remove').style.display = "none"
+            }
+            const hiddened = () => {
+                document.getElementById('hiddened').style.visibility = "hidden"
+            }
+            const reset = () => {
+                document.getElementById('remove').style.display = "block"
+                document.getElementById('hiddened').style.visibility = "inherit"
+            }
+        </script>
+    </body>
+</html>

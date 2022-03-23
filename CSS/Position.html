@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <style>
+            div.static {
+
+                position: static;
+                border: 3px solid #73AD21;
+            }
+            div.relative {
+                /* 위치: 상태(relative) 
+                    상대적으로 배치된 요소의 top, right, bottom, left 속성을 설정하면 원래 위치에서 멀어지게 조정된다. 다른 콘테츠는 요소에 의해 남겨진 간격에 맞게 조정되지는 않는다.    
+                */
+                position: relative;
+                left: 30px;
+                border: 3px solid #73AD21;
+            }
+            div.fixed {
+                /* 위치: 고정(fixed)
+                    position: fixed; 는 뷰포트에 상대적으로 위치하므로 페이지가 스크롤 되더라도 항상 같은 위치에 유지 된다. top, right, bottom, left 속성은 요소의 위치를 지정하는데 사용됨
+                    고정 요소는 일반적으로 위치로 했을 페이지에 공백을 남기지 않는다
+                */
+                position: fixed;
+                border: 3px solid #73AD21;
+                bottom: 0;
+                right: 0;
+                width: 300px;
+            }
+            div.relative1 {
+                position: relative;
+                width: 400px;
+                height: 200px;
+                border: 3px solid #73AD21;
+            }
+            div.absolute {
+                /* 위치: 절대(absolute)
+                    postion: absolute 는 가장 가까운 위치에 있는 조상을 기준으로 배치됩니다 (고정처럼 뷰포트에 상대적으로 배치되는 대신).
+                    하지만 절대 위치 요소에 위치 지정상위 요소가 없으면 문서 본문을 사용하고 페이지 스크롤과 함께 이동한다.
+                */
+                width: 200px;
+                height: 100px;
+                border: 3px solid #73AD21;
+                position: absolute;
+                right: 0px;
+                top: 80px;
+            }
+            div.sticky {
+                /* position: sticky는 사용자의 스크롤 위치를 기준으로 배치된다.
+                    고정요소는 스크롤 위치에 따라 relative 및 사이를 전환합니다. fixed 주어진 오프셋 위치가 뷰포트에서 만날 때까지 상대적으로 배치된 다음 제자리에 "고정" 된다. (ex: postion:fixed)
+                */
+                position: -webkit-sticky;
+                position: sticky;
+                top: 0;
+                padding: 5px;
+                background-color: #cae8ca;
+                border: 2px solid #4CAF50;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>position: static;</h2>
+        <p>An element with positionL static; is not positioned in any special way; it is always positioned according to the normal flow of the page:</p>
+        <div class="static">This div element has position: static;</div>
+        
+        <hr>
+        <h2>position: relative;</h2>
+        <p>An element with position: relative; is positioned relative to its normal position:</p>
+        <div class="relative">This div element has position: relative</div>
+        <hr>
+        <h2>position: fixed;</h2>
+        <p>An element with position: fixed; is positioned relative to the viewport, which means it always stays in the same place even if the page is scrolled:</p>
+        <div class="fixed">This div element has position: fixed</div>
+        <hr>
+        <h2>position: absolute;</h2>
+        <p>An element with position: absolute; is positioned relative to the nearest positioned ancestor (instead of positioned relative to the viewport, like fixed):</p>
+        <div class="relative1">This div element has position: relative;
+            <div class="absolute">This div element has position: absolute</div>
+        </div>
+        <hr>
+        <p>Try to <b>scroll</b> inside this frame to understand how sticky positioning works.</p>
+        <div class="sticky">I am sticky!</div>
+        <div style="padding-bottom: 2000px;">
+            <p>In this example, the sticky element sticks to the top of the page (top: 0), when you reach its scroll position.</p>
+            <p>Scroll back up to remove the stickyness.</p>
+            <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+            <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+        </div>
+
+
+    </body>
+</html>

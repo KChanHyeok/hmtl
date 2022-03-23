@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <style>
+            a.one {
+                color: black;
+            }
+            a.one:hover {
+                color: green;
+            }
+            a.two {
+                color: green;
+                text-decoration: none;
+            }
+            a.two:hover {
+                color: rgb(13, 129, 13);
+                text-decoration: underline;
+            }
+            a.three {
+                color: black;
+                text-decoration: none;
+                border: 2px solid green;
+                padding: 10px;
+            }
+            a.three:hover {
+                color: white;
+                background-color: green;
+            }
+            a.four {
+                padding: 13px;
+                background-color: tomato;
+                color: white;
+                text-decoration: none;
+            }
+            a.four:hover {
+                background-color: red;
+            }
+            a.five:link{
+                color: red;
+            }
+            a.five:visited{
+                color: green;
+            }
+            a.five:hover {
+                color: hotpink;
+            }
+            a.five:active {
+                color: blue;
+            }
+            a.six:link {
+                text-decoration: none;
+            }
+            a.six:visited {
+                text-decoration: none;
+            }
+            a.six:hover {
+                text-decoration: underline;
+            }
+            a.six:active {
+                text-decoration: underline;
+            }
+            a.seven:link {
+                background-color: yellow;
+            }
+            a.seven:visited {
+                background-color: cyan;
+            }
+            a.seven:hover {
+                background-color: lightgreen;
+            }
+            a.seven:active {
+                background-color: hotpink;
+            }
+            a.eight:link, a.eight:visited {
+                background-color: #f44336;
+                text-decoration: none;
+                color: white;
+                padding: 15px 25px;
+            }
+            a.eight:hover, a.eight:active {
+                background-color: red;
+            }
+
+
+
+        </style>
+    </head>
+    <body>
+        <br>
+        <a class="one" href="#">Text Link</a>
+        <a class="two" href="#">Text Link</a>
+        <a class="three" href="#">Link Button</a>
+        <a class="four" href="#">Link Button</a>
+        <br><br>
+        <hr>
+
+        <h2>Styling a link depending on state</h2>
+        <p><b><a class="five" href="#" target="_blank">This is a link</a></b></p>
+        <p><b>Note:</b> a:hover MUST come after a:link and a:visited in the CSS definition in order to be effective.</p>
+        <p><b>Note:</b> a:active MUST come after a:hover in the CSS definition in order to be effective.</p>
+        <br><br>
+        <hr>
+        <h2>Styling a link with text-decoration property</h2>
+        <p><b><a class="six" href="#">This is a link</a></b></p>
+        <p><b>Note: </b>a:hover MUST come after a:link and a:visited in the CSS definition in order to be effective.</p>
+        <p><b>Note: </b>a:active MUST come after a:hover in the CSS definition in order to be effective.</p>
+        <br><br>
+        <hr>
+
+        <h2>Styling a link with background-color property</h2>
+        <p><b><a class="seven" href="#" target="_blank">This is a link</a></b></p>
+        <p><b>Note:</b> a:hover MUST come after a:link and a:visited in the CSS definition in order to be effective.</p>
+        <p><b>Note:</b> a:active MUST come after a:hover in the CSS definition in order to be effective.</p>
+        <br><br>
+        <hr>
+        <h2>Link Button</h2>
+        <p>A link styled as a button:</p><br>
+        <a class="eight" href="#" target="_blank">This is a link</a>
+
+        
+    </body>
+</html>

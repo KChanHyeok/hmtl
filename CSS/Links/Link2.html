@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <style>
+            a.one:link{color: #ff0000}
+            a.one:visited{color: #0000ff}
+            a.one:hover {color: #ffcc00;}
+            a.two:link{color: #ff0000;}
+            a.two:visited{color: #0000ff;}
+            a.two:hover{font-size: 25px;}
+            a.three:link{color: #ff0000;}
+            a.three:visited{color: #0000ff;}
+            a.three:hover{background: lightgreen;}
+            a.four:link{color: #ff0000;}
+            a.four:visited{color: #0000ff;}
+            a.four:hover{font-family: monospace;}
+            a.five:link{color: #ff0000; text-decoration: none;}
+            a.five:visited{color: #0000ff; text-decoration: none;}
+            a.five:hover{text-decoration: underline;}
+
+            a.ex:link, a.ex:visited {
+                color: black;
+                text-decoration: none;
+                border: 2px solid green;
+                text-align: center;
+                padding: 10px 20px;
+            }
+            a.ex:hover, a.ex:active {
+                color: white;
+                background-color: green;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Styling Link</h1>
+        <p>Mouse over the links and watch them change layout:</p>
+        <p><b><a class="one" href="#" target="_blank">This link changes color</a></b></p>
+        <p><b><a class="two" href="#" target="_blank">This link changes font-size</a></b></p>
+        <p><b><a class="three" href="#" target="_blank">This link changes background-color</a></b></p>
+        <p><b><a class="four" href="#" target="_blank">This link changes font-family</a></b></p>
+        <p><b><a class="five" href="#" target="_blank">This link changes text-decoration</a></b></p>
+        <br><br>
+        <hr>
+        <h2>Link Button</h2>
+        <a class="ex" href="#">This is a link</a>
+    </body>
+</html>

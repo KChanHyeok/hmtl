@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <style>
+            button {
+                color: white;
+                padding: 5px 150px;
+                background-color: #04AA6D;
+                border: none;
+            }
+            #show{
+                display: none;
+                width: 412px;
+                height: 100px;
+                background-color: #04AA6D;
+            }
+            p{
+                color: white;
+                padding-top: 15px;
+                text-align: center;
+                font-size: 5px;
+            }
+            span{
+                background-color: white;
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <button onclick="onshow()">click to show panel</button>
+        <div id="show">
+            <p>This panel contains a &lt;div&gt; element, which is hidden by default(<span>display: none</span>).</p>
+            <p>It is styled with CSS, and we use JavaScript to show it (change it to (<span>display: block</span>).</p>
+        </div>
+        <script> 
+        const onshow = () => {
+            document.getElementById('show').style.display = "block";
+        }
+        </script>
+    </body>
+</html>
