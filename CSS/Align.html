@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .center1 {
+                border: 3px solid green;
+                width: 60%;
+                margin: auto;
+            }
+            .center2 {
+                border: 3px solid green;
+                text-align: center;
+            }
+            .center3 {
+                margin: auto;
+                display: block;
+                width: 300px;
+            }
+            .center4 {
+                position: absolute;
+                right: 0;
+                width: 300px;
+                padding: 15px 10px;
+                border: 3px solid green;
+            }
+            .center5 {
+                border: 3px solid green;
+                width: 300px;
+                float: right;
+                padding: 10px;
+            }
+            .center6 {
+                border: 3px solid green;
+                padding: 70px 0px;
+            }
+            .center7 {
+                border: 3px solid green;
+                padding: 70px 0px;
+                text-align: center;
+            }
+            .center8 {
+                line-height: 200px;
+                height: 200px;
+                border: 3px solid green;
+                text-align: center;
+            }
+            .center9 {
+                height: 200px;
+                position: relative;
+                border: 3px solid green;
+            }
+            .center9 p {
+                margin: 0;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                -ms-transform: (-50%, -50%) ;
+                transform: translate(-50%, -50%) ;
+            }
+            .center10 {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: 3px solid green;
+                height: 200px;
+            }
+            .box {
+                border: 3px solid green;
+            }
+            .img1 {
+                float: right;
+            }
+            .img2 {
+                float: right;
+            }
+            .clearfix::after {
+                display: table;
+                content: "";
+                clear: both;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <h2>Center Align Elements</h2>
+        <p>To horizontally center a block element (like div), use margin: auto;</p>
+        <div class="center1"><p>Hello World!</p></div>
+        <hr>
+        <h2>Conter Text</h2>
+        <div class="center2"><p>This text is centered</p></div>
+        <hr>
+        <h2>Center an Image</h2>
+        <p>To center an image, set left and right margin to auto, and make it into a block element.</p>
+        <img class="center3" src="https://www.w3schools.com/css/paris.jpg" alt="">
+        <hr>
+        <h2>Right align with the position property</h2>
+        <p>An example of how to right align element with the position property:</p>
+        <div class="center4">In my younger and more vulnerable years my father gave me some advice that I've been turning over in my mind ever since.</div>
+        <br><br><br><br><br><br>
+        <hr>
+        <h2>Right align with the float property</h2>
+        <p>An example of how to right align elements with the float property:</p>
+        <div class="center5">In my younger and more vulnerable years my father gave me some advice that I've been turning over in my mind ever since.</div>
+        <br><br><br><br><br><br>
+        <hr>
+        <h2>Without Clearfix</h2>
+        <p>This image is floated to the right. It is also taller than the element containing it, so it overflows outside of its container:</p>
+        <div class="box"><img class="img1" src="https://www.w3schools.com/css/pineapple.jpg" alt="pineapple" width="120" height="120">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet...</div>
+        <br><br><br>
+        <h2>With New Modern Clearfix</h2>
+        <p>Add the clearfix hack to fix this problem:</p>
+        <div class="box clearfix"><img class="img2" src="https://www.w3schools.com/css/pineapple.jpg" alt="pineapple" width="120" height="120">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet...</div>
+        <hr>
+        <h2>Center vertically with padding</h2>
+        <p>In this example, we use the padding property to center the div element vertically:</p>
+        <div class="center6"><p>I am vertically centered</p></div>
+        <hr>
+        <h2>Center with padding and text-align</h2>
+        <p>In this example, we use padding and text-align to center the div element both vertically and horizontally:</p>
+        <div class="center7"><p>I am vertically and horizontally centered.</p></div>
+        <hr>
+        <h2>Center with line-height</h2>
+        <p>In this example, we use the line-height property with a value that is equal to the height property to center the div element:</p>
+        <div class="center8">
+            <p>I am vertically and horizontally centered.</p>
+        </div>
+        <hr>
+        <h2>Center with position and transform</h2>
+        <p>In this example, we use positioning and the transform property to verically and horizontally center the div element:</p>
+        <div class="center9">
+            <p>I am vertically and horizontally centered</p>
+        </div>
+        <hr>
+        <h2>Flexbox Centering</h2>
+        <p>A container with both the justify-content and the align-items properties set to center will align the item(s) in the center (in both axis).</p>
+        <div class="center10">
+            <p>I am vertically and horizontally centered.</p>
+        </div>
+    </body>
+</html>
