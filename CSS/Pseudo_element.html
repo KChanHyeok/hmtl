@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            /* p::first-line {
+                color: red;
+                font-variant: small-caps;
+            }
+            p::first-letter {
+
+                font-size: 50px;
+            } */
+            p.intro::first-letter {
+                color: green;
+                font-size: 50px;
+            }
+            /* p::first-line {
+                color: blue;
+            }
+            p::first-letter {
+                color: red;
+                font-size: 35px;
+            } */
+            h1::before {
+                content: url('https://www.w3schools.com/html/smiley.gif');
+            }
+            h1::after {
+                content: url('https://www.w3schools.com/html/smiley.gif');
+            }
+            li::marker {
+                color: red;
+                font-size: 15px;
+            }
+            ::selection {
+                color: red;
+                background-color: yellow;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <!-- <p>You can use the ::first-line pseudo-element to add a special effect to the first line of a text. Some more text. 
+            And even more, and more, and more, and more, and more, and more, and more, and more, and more, and more, and more, and more.</p> -->
+        <!-- <p class="intro">This is a paragraph with some text. A bit more text even.</p> -->
+        <!-- <p>You can combine the ::first-letter and ::first-line pseudo-element to add a special effect to the first letter and the first line of a text!</p> -->
+        <h1>hello</h1>
+
+
+        <ul>
+            <li>Coffee</li>
+            <li>Tea</li>
+            <li>Milk</li>
+        </ul>
+        <ol>
+            <li>First</li>
+            <li>Second</li>
+            <li>Third</li>
+        </ol>
+        <h2>Select some text on this page:</h2>
+        <p>This is a paragraph</p>
+        <p>This is some text in a div element.</p>
+
+    </body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <style>
+            img {
+                opacity: 1;   
+            }
+            img.ex {
+                opacity: 0.5;
+            }
+            img.box:hover {
+                opacity: 0.5;
+            }
+            div.first {
+                opacity: 0.1;
+            }
+            div.second {
+                opacity: 0.3;
+            }
+            div.third {
+                opacity: 0.6;
+            }
+            div.c {
+                background-color: green;
+                padding: 10px;
+            }
+            div.background {
+                background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOJdb1hij0NVBu_shiSpFKr8wATHB-aybspQ&usqp=CAU');
+                border: 1px solid black;
+            }
+            div.transbox {
+                margin: 30px;
+                background-color: #ffffff;
+                opacity: 0.6;
+                border: 2px solid black;
+            }
+            div.transbox p {
+                margin: 5%;
+                font-weight: bold;
+            }
+
+        </style>
+    </head>
+    <body>
+        <h2>Image Transparency</h2>
+        <p>The opacity property specifies the transparency of an element. The lower the value, the more transparent:</p>
+        <p>Image with 50% opacity:</p>
+        <img class="ex" src="https://www.w3schools.com/css/img_forest.jpg" alt="forest" width="150" height="100">
+        <hr>
+        <img class="box" src="https://www.w3schools.com/css/img_lights.jpg" alt="lights" width="200" height="150">
+        <img class="box" src="https://www.w3schools.com/css/img_5terre.jpg" alt="5terre" width="200" height="150">
+        <img class="box" src="https://www.w3schools.com/css/img_mountains.jpg" alt="mountains" width="200" height="150">
+        <hr>
+        <h2>Transparent Box</h2>
+        <p>When using the opacity property to add transparency to the background of an element, all of its child elements become transparent as well. This can make the text inside a fully transparent element hard to read:</p>
+        <div class="first c"><p>opacity 0.1</p></div>
+        <div class="second c"><p>opacity 0.3</p></div>
+        <div class="third c"><p>opacity 0.6</p></div>
+        <div class="c"><p>opacity 1 (default)</p></div>
+        <hr>
+        <div class="background">
+            <div class="transbox">
+                <p>This is some text that is placed in the transparent box</p>
+            </div>
+        </div>
+    </body>
+</html>
