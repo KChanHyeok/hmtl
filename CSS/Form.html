@@ -1,31 +1,173 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
     <head>
         <style>
-            .inputbox {
+        
+            #onename, #twoname{
                 width: 100%;
                 padding: 15px;
-                background-color: #ccc;
+                margin: 5px 0px;
+                box-sizing: border-box;
             }
-            .textbox {
+            #threename, #fourname {
                 width: 100%;
-                padding: 10px 30px;
+                padding: 15px 11px;
+                margin: 5px 0px;
+                box-sizing: border-box;
+                border-radius: 8px;
+                border: 2px solid red;
+            }  
+            #fivename, #sixname {
+                width: 100%;
+                padding: 10px 12px;
+                border: none;
+                border-bottom: 2px solid red;
+                box-sizing: border-box;
+            }
+            #sevenname, #eightname{
+                width: 100%;
+                padding: 10px 12px;
+                margin: 8px 0px;
+                box-sizing: border-box;
+                border: none;
+                background-color: #3CBC8D;
+                color: white;
+            }
+            #one,#two {
+                width: 100%;
+                padding: 10px 12px;
+                margin: 8px 0px;
+                box-sizing: border-box;
+            }
+            #one:focus, #two:focus {
+                background-color: lightblue;
+            }
+            #three, #four {
+                width: 100%;
+                padding: 10px 15px;
+                margin: 8px 0px;
+                box-sizing: border-box;
+                border: 2px solid #ccc;
+                outline: none;
+                transition: 0.8s;
+            }
+            #three:focus, #four:focus {
+                border: 2px solid black;
+            }
+            #search {
+                width: 20%;
+                box-sizing: border-box;
+                padding: 12px 10px ;
+                border-radius: 5px;
+                border: 2px solid #ccc;
+                font-size: 16px;
+                background-repeat: no-repeat;
+                background-color: white;
+                background-position: 10px 10px;
+                transition: width 0.4s ease-in-out;
+            }
+            #search:focus {
+                width: 100%;
+            }
+            #textarea {
+                width: 100%;
+                height: 150px;
+                border-radius: 5px;
+                padding: 15px 10px;
+                border: 2px solid #ccc;
+                background-color: #f8f8f8;
+                resize: none;
+            }
+            #option {
+                width: 100%;
+                border: none;
+                background-color: #f8f8f8;
+                padding: 15px 15px;
+                border-radius: 3px;
             }
         </style>
     </head>
     <body>
-        <div class="inputbox">
-            <p>first Name</p>
-            <input class="textbox" type="text" placeholder="Your name..">
-            <p>Last Name</p>
-            <input class="textbox" type="text" placeholder="Your last name..">
-            <p>Country</p>
-            <select name="" id="">
-                <option value="Australia">Australia</option>
-                <option value="Canada">Canada</option>
-                <option value="USA">USA</option>
-            </select><br>
-            <input type="submit" value="Submit">
-        </div>
+        <h2>A full-width input field</h2>
+        <form>
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" name="fname">
+        </form>
+        <hr>
+        <h2>Padded Name</h2>
+        <form>
+            <label for="onename">First Name</label>
+            <input type="text" id="onename" name="onename">
+            <label for="twoname">Last Name</label>
+            <input type="text" id="twoname" name="twoname">
+        </form>
+        <hr>
+        <h2>Input fields width borders</h2>
+        <form>
+            <label for="threename">First Name</label>
+            <input type="text" id="threename" name="threename">
+            <label for="fourname">Last Name</label>
+            <input type="text" id="fourname" name="fourname">
+        </form>
+        <hr>
+        <h2>Input fields with bottom border</h2>
+        <form>
+            <label for="fivename">First Name</label>
+            <input type="text" id="fivename" name="fivename">
+            <label for="sixname">Last Name</label>
+            <input type="text" id="sixname" name="sixname" >
+        </form>
+        <hr>
+        <h2>Input fields with color</h2>
+        <form>
+            <label for="sevenname">First Name</label>
+            <input type="text" id="sevenname" name="sevenname" value="John">
+            <label for="eightname">Last Name</label>
+            <input type="text" id="eightname" name="eightname" value="Doe">
+        </form>
+        <hr>
+        <h2>Input fields with color on :focus</h2>
+        <p>Here, the input field gets a color when it gets focus (clicked on):</p>
+        <form>
+            <label for="one">First Name</label>
+            <input type="text" id="one" name="one" value="John">
+            <label for="two">Last Name</label>
+            <input type="text" id="two" name="two" value="Doe">
+        </form>
+        <hr>
+        <h2>Input fields with black border on :focus</h2>
+        <p>Here, the input field gets a black border color when it gets focus (clicked on). We have also added the CSS transition property to animate the border color (takes 0.5 seconds to change the color on focus):</p>
+        <form>
+            <label for="three">First Name</label>
+            <input type="text" id="three" name="three" value="John">
+            <label for="four">Last Name</label>
+            <input type="text" id="four" name="four" value="Doe">
+        </form>
+        <hr>
+        <h2>Input field with an icon inside</h2>
+        <form>
+            <input type="text" id="search" name="search" placeholder="Search..">
+        </form>
+        <hr>
+        <h2>Styling textarea</h2>
+        <p><strong>Tip:</strong> Use the resize property to prevent textareas from being resized (disable the "grabber" in the bottom right corner):</p>
+        <form>
+            <textarea id="textarea" >Some text...
+            </textarea>
+        </form>
+        <hr>
+        <h2>Styling a select menu</h2>
+        <select id="option" name="option">
+            <option value="au">Australia</option>
+            <option value="ca">Canada</option>
+            <option value="usa">USA</option>
+        </select>
+        <hr>
+        <h2>Styling form buttons</h2>
+        <input type="button" value="Button">
+        <input type="reset" value="Reset">
+        <input type="submit" value="Submit">
+        <hr>
+        
     </body>
 </html>
