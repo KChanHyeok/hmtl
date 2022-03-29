@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STT</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        input[type = text], input[type = search] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        label {
+            padding: 12px 12px 12px 0;
+            display: inline-block;
+        }
+        input[type = submit] {
+            background-color: #04AA6D;
+            color: white;
+            padding: 6px 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            float: right;
+        }
+        input[type = submit]:hover {
+            background-color: green;
+        }
+        .container {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+        .col-25 {
+            float: left;
+            margin-top: 6px;
+            width: 25%;
+        }
+        .col-75 {
+            float: left;
+            margin-top: 6px;
+            width: 75%;
+        }
+
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h2>STT</h2>
+    </div>
+    <div class="container">
+        <form>
+            <div class="row">
+                <div class="col-25">
+                    <label for="">파일검색</label>
+                </div>
+                <div class="col-75">
+                    <input type="search">
+                    <input type="submit" value="확인" style="position: absolute; float: right; right: 31px; top: 106px;">
+                </div>
+            </div>
+            <div class="row">
+                
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="">파일업로드</label>
+                </div>
+                <div class="col-75">
+                    <form action="">
+                        <input type="file">
+                        <input type="submit" value="확인">
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <audio controls>
+                        <source src="" type="">
+                    </audio>
+                </div>
+                <div class="col-75">
+                    <input type="submit" value="결과확인">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="">예상결과</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="expected_results">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="">결과</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="result">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="">성공여부</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="success_status">
+                </div>
+            </div>
+
+        </form>
+    </div>
+</body>
+</html>

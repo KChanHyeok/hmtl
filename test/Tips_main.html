@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIPS</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .header {
+            display: flex;
+            color: white;
+            background-color: gray;
+            padding-left: 20px;
+            border-radius: 12px;
+        }
+        .container {
+            padding: 10px 0px;
+            background-color: #f2f2f2;
+            border-radius: 12px;
+        }
+        .container:after {
+            display: table;
+            content: "";
+            clear: both;
+        }
+
+        .col-20 {
+            float: left;
+            width: 20%;
+            height: 500px;
+        }
+        .col-20 a{
+            width: 80%;
+            display: block;
+            margin: 15px;
+            padding: 10px;
+            background-color: #04AA6D;
+            text-decoration: none;
+            border-radius: 5px;
+            color: white;
+            text-align: center;
+        }
+        .col-20 a:hover {
+            background-color: green;
+        }
+        .col-80 {
+            float: left;
+            height: 500px;
+            width: 80%;
+        }
+        .nav {
+            margin-left: 10px;
+        }   
+        .nav h2 {
+            margin: 0;
+        }
+        .contents {
+            margin-top: 10px;
+            margin-left: 10px;
+            padding: 10px;
+            height: 100%;
+        }
+        .contents h2 {
+            margin-left: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h2>TIPS Deephigh</h2>
+    </div>
+    <div class="container">
+        <div class="col-20">
+            <a href="">문장 단위 전처리 엔진</a>
+            <a href="">문장분할 전처리 엔진</a>
+            <a href="">토픽 모델링</a>
+            <a href="">토픽 추출</a>
+            <a href="">토픽 분류</a>
+            <a href="">유저 프로파일 추출</a>
+            <a href="">감성 분석 엔진</a>
+            <a href="">STT(Speech To Text)</a>
+        </div>
+        
+        <div class="col-80">
+            <div class="nav">
+                <h2>Navigation</h2>
+            </div>
+            <div class="contents">
+                <h2>Contents</h2>
+            </div>
+         </div>
+    </div>
+</body>
+</html>
